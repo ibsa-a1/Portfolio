@@ -16,7 +16,7 @@ const Navbar = () => {
     };
   }, [showMobileMenu]);
   return (
-    <div className="absolute top-0 left-0 w-full z-10">
+    <div className="absolute top-0 left-0 w-full z-10 bg-gray-50">
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-20 lg:px-32 bg-transparent">
         <h2 className="text-2xl font-bold cursor-pointer">Ibsa.dev</h2>
         <ul className="hidden md:flex gap-7 text-black">
