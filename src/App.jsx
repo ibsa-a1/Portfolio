@@ -1,9 +1,12 @@
 import reactLogo from "./assets/react.svg";
+import Navbar from "./components/Navbar";
 import viteLogo from "/vite.svg";
 
 function App() {
   return (
-    <div className="text-3xl text-amber-500 underline font-bold">Hello</div>
+    <div>
+      <Navbar />
+    </div>
   );
 }
 
