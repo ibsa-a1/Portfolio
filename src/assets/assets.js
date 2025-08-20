@@ -1,9 +1,13 @@
 import menu_icon from "./menu_icon.svg";
 import cross_icon from "./cross_icon.svg";
 import profile from "./profile.png";
+import github_icon from "./github_icon.svg";
+import linkedin_icon from "./linkedin_icon.svg";
 
 export const assets = {
     menu_icon,
     cross_icon,
     profile,
+    github_icon,
+    linkedin_icon,
 };

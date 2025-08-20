@@ -98,7 +98,7 @@ const Navbar = () => {
             className="px-4 py-3 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
-            Testimonials
+            Contact
           </a>
         </ul>
       </div>
