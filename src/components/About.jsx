@@ -4,11 +4,15 @@ import { assets } from "../assets/assets";
 const About = () => {
   return (
     <div className="container mx-auto items-center justify-center py-10">
-      <h1 className="text-3xl font-bold md:mb-32 mb-16 mx-auto flex flex-col items-center justify-center  ">
-        About Me
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold md:mb-32 mb-16 mx-auto flex items-center justify-center">
+        About{" "}
+        <span className="underline underline-offset-4 decoration-1 under font-light">
+          {" "}
+          Me
+        </span>
       </h1>
-      <div className=" container mx-auto flex flex-col md:flex-row items-center justify-center text-center">
-        <div className="relative w-[300px] h-[200px] sm:w-[350px] sm:h-[250px] md:w-[400px] md:h-[250px]">
+      <div className="container mx-auto justify-center flex flex-col md:flex-row items-center md:text-start md:gap-20">
+        <div className="relative w-[300px] h-[200px] sm:w-[350px] sm:h-[250px] md:w-[480px] md:h-[270px] flex items-center justify-center transition-transform duration-300 hover:scale-105">
           <img
             src={assets.about_image}
             alt="Image 1"
@@ -20,7 +24,7 @@ const About = () => {
             className="absolute bottom-0 right-0 w-24 h-24 md:w-40 md:h-40 sm:w-32 sm:h-32 rounded-full translate-x-1/4 translate-y-1/4"
           />
         </div>
-        <p className="text-gray-700 mt-16 md:mt-5 text-balance md:text-start md:pl-32 w-3/4 md:w-3/4 lg:w-1/2 ">
+        <p className="text-gray-700 mt-16 md:mt-0 text-balance md:text-start w-3/4 md:w-3/4 lg:w-1/2 ">
           Hey! I’m Ibsa, Frontend Website Developer and I absolutely love
           building things on the web. React.js is my playground, and I enjoy
           experimenting with modern technologies to bring ideas to life. I’m all
