@@ -5,6 +5,7 @@ import github_icon from "./github_icon.svg";
 import linkedin_icon from "./linkedin_icon.svg";
 import about_image from "./about_image.jpg";
 import dev_image from "./dev_image.png";
+import resume_template from "./resume_template.pdf"
 
 export const assets = {
     menu_icon,
@@ -14,4 +15,5 @@ export const assets = {
     linkedin_icon,
     about_image,
     dev_image,
+    resume_template
 };

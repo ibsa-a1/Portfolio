@@ -1,5 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { Download } from "lucide-react";
 
 const About = () => {
   return (
@@ -41,6 +42,18 @@ const About = () => {
           usually exploring new ideas, collaborating with others, or finding
           ways to challenge myself and grow.
         </p>
+      </div>
+      <div className="flex justify-center mt-8 md:mt-16">
+        <a
+          href={assets.resume_template}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-xl shadow hover:bg-blue-700 transition"
+        >
+          <Download className="w-5 h-5" />
+          Get My Resume
+        </a>
       </div>
     </div>
   );
