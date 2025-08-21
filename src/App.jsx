@@ -4,7 +4,7 @@ import Projects from "./components/Projects";
 
 function App() {
   return (
-    <div className="bg-white">
+    <div className="bg-white min-h-screen">
       <Header />
       <About />
       <Projects />

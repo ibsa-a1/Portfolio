@@ -10,6 +10,7 @@ import {
   SiVite,
   SiGit,
 } from "react-icons/si";
+import { Code } from "lucide-react";
 
 const Header = () => {
   return (
@@ -78,7 +79,19 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <img src={assets.profile} alt="profile" className="h-80 lg:h-96 mt-14" />
+
+      <div className="relative mt-48 sm:mt-28 lg:mt-0">
+        <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+          <img
+            src={assets.profile}
+            alt="Ibsa Abera - Frontend Developer"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center animate-pulse">
+          <Code className="w-8 h-8 text-white" />
+        </div>
+      </div>
     </div>
   );
 };
