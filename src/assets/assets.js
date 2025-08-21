@@ -31,7 +31,7 @@ export const projectsData = [
     {
         id: 1,
         title: "My-Estate",
-        description: "",
+        description: "A fully responsive real estate landing page designed for property selling. Built with React and Tailwind CSS, it features smooth animations with Framer Motion, interactive image sliders, Toastify notifications, and a Web3-powered form for easy user submissions. This project demonstrates modern UI/UX design and responsiveness for real estate platforms.",
         image: project_img_1,
         code: "https://github.com/ibsa-a1/My-Estate.git",
         Demo: "https://my-estate-black.vercel.app/",
@@ -39,7 +39,7 @@ export const projectsData = [
     {
         id: 2,
         title: "Online Code Editor",
-        description: "",
+        description: "A responsive online code editor supporting six programming languages. Built with React and Chakra UI V3 and uses Toastify notifications for internal errors, it provides users with ready-to-use code snippets for each language and executes code perfectly using the Piston API. This project showcases dynamic frontend development and real-time code execution in a clean, user-friendly interface.",
         image: project_img_2,
         code: "https://github.com/ibsa-a1/Online-Code-Editor.git",
         Demo: "https://onlinecoder.vercel.app/",
@@ -47,7 +47,7 @@ export const projectsData = [
     {
         id: 3,
         title: "Movie App",
-        description: "",
+        description: "A fully responsive movie listing app fetching data from TMDB API. Built with React and CSS, it displays movie posters, titles, release dates, ratings, overviews, and trailers. Users can search for movies and save favorites using local storage and watch Trailors. This project highlights API integration, dynamic rendering, and state management in React.",
         image: project_img_3,
         code: "https://github.com/ibsa-a1/React-Movie-App.git",
         Demo: "https://ibsa-movie-app.vercel.app/",
@@ -55,7 +55,7 @@ export const projectsData = [
     {
         id: 4,
         title: "Addis Ababa Centered Map",
-        description: "",
+        description: "A responsive map application centered on Addis Ababa, Ethiopia, built with React, React Leaflet, and OpenStreetMap. It allows users to search for places and is tailored specifically for Ethiopian locations. This project serves as a foundation for feature planned startup idea of mine, demonstrating interactive maps and geolocation-focused UI.",
         image: project_img_4,
         code: "https://github.com/ibsa-a1/Addis-Ababa-Centered-React-Leaflet.git",
         Demo: "https://addis-ababa-map.vercel.app/",
