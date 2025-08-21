@@ -33,7 +33,7 @@ const Navbar = () => {
             About
           </a>
           <a
-            href="#"
+            href="#Projects"
             className="mt-2 cursor-pointer font-semibold hover:text-gray-600"
           >
             Projects
@@ -87,7 +87,7 @@ const Navbar = () => {
             About
           </a>
           <a
-            href="#"
+            href="#Projects"
             className="px-4 py-3 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
