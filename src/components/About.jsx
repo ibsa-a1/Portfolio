@@ -3,7 +3,10 @@ import { assets } from "../assets/assets";
 
 const About = () => {
   return (
-    <div className="container mx-auto items-center justify-center py-10">
+    <div
+      className="container mx-auto items-center justify-center py-10"
+      id="About"
+    >
       <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold md:mb-32 mb-16 mx-auto flex items-center justify-center">
         About{" "}
         <span className="underline underline-offset-4 decoration-1 under font-light">

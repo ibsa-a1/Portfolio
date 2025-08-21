@@ -27,7 +27,7 @@ const Navbar = () => {
             Home
           </a>
           <a
-            href="#"
+            href="#About"
             className="mt-2 cursor-pointer font-semibold hover:text-gray-600"
           >
             About
@@ -73,14 +73,14 @@ const Navbar = () => {
         </div>
         <ul className="flex flex-col items-center gap-0 mt-4 mx-5 text-lg font-medium">
           <a
-            href="r"
+            href="#"
             className="px-4 py-3 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
             Home
           </a>
           <a
-            href=""
+            href="#About"
             className="px-4 py-3 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
