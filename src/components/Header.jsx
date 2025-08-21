@@ -42,38 +42,38 @@ const Header = () => {
             <img src={assets.linkedin_icon} alt="LinkedIn" className="h-10" />
           </a>
         </div>
-        <div className="flex flex-col lg:flex-row gap-0 md:gap-2 mb-5 ">
-          <p className="text-2xl mt-2 text-gray-600 font-semibold">
+        <div className="flex flex-col lg:flex-row gap-0 md:gap-8 mb-5 ">
+          <p className="text-xl mt-2 text-gray-600 font-semibold">
             Tech Stack <span className="hidden md:inline">|</span>{" "}
           </p>{" "}
-          <div className="flex gap-4 mt-2 mb-5">
+          <div className="flex gap-4 md:gap-8 mt-2 mb-5">
             <SiHtml5
               color="#E34F26"
-              className="h-10 w-8 transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-2"
             />
             <SiCss3
               color="#1572B6"
-              className="h-10 w-8 transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-2"
             />
             <SiJavascript
               color="#F7DF1E"
-              className="h-10 w-8 transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-2"
             />
             <SiReact
               color="#61DAFB"
-              className="h-10 w-8 transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-2"
             />
             <SiTailwindcss
               color="#06B6D4"
-              className="h-10 w-8 transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-2"
             />
             <SiVite
               color="#BD34FE"
-              className="h-10 w-8 transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-2"
             />
             <SiGit
               color="#F05032"
-              className="h-10 w-8 transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-2"
             />
           </div>
         </div>
