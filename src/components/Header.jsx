@@ -43,7 +43,7 @@ const Header = () => {
           </a>
         </div>
         <div className="flex flex-col lg:flex-row gap-0 md:gap-2 mb-5 ">
-          <p className="text-2xl mt-2 text-gray-700 font-semibold">
+          <p className="text-2xl mt-2 text-gray-600 font-semibold">
             Tech Stack <span className="hidden md:inline">|</span>{" "}
           </p>{" "}
           <div className="flex gap-4 mt-2 mb-5">
