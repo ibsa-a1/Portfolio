@@ -83,7 +83,7 @@ const Header = () => {
       <div className="relative mt-48 sm:mt-28 lg:mt-0">
         <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
           <img
-            src={assets.profile}
+            src={assets.profile_img}
             alt="Ibsa Abera - Frontend Developer"
             className="w-full h-full object-cover"
           />
