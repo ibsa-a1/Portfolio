@@ -44,8 +44,8 @@ const Navbar = () => {
           >
             Contact
           </a>
-          <a href="#Footer">
-            <button className="hidden md:block bg-blue-900 hover:bg-blue-800 text-white py-2 px-4 rounded-full cursor-pointer">
+          <a href="#Contact">
+            <button className="hidden md:block bg-blue-600 hover:bg-blue-700 font-semibold text-white py-2 px-4 rounded-full cursor-pointer">
               Hire Me
             </button>
           </a>
