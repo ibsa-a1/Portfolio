@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -63,6 +64,33 @@ const Contact = () => {
               </div>
             </div>
           </ul>
+          <h2 className="text-lg font-semibold mb-4 mt-8">Connect with me</h2>
+          <div className="flex justify-center space-x-6">
+            <a
+              href="https://github.com/ibsa-a1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-gray-700 transition"
+            >
+              <FaGithub size={22} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-500 transition"
+            >
+              <FaLinkedin size={22} />
+            </a>
+
+            <a
+              href="mailto:ibsaabera712@.com"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-500 transition"
+            >
+              <FaEnvelope size={22} />
+            </a>
+          </div>
         </div>
         <div>Contact Form</div>
       </div>
