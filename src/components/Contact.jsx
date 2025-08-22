@@ -1,8 +1,36 @@
 import React, { useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    const emailkey = import.meta.env.VITE_WEB3_KEY;
+
+    formData.append("access_key", emailkey);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("");
+      toast.success("Message sent successfully!");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      toast.error(data.message);
+      setResult("");
+    }
+  };
   return (
     <div
       id="Contact"
@@ -98,7 +126,10 @@ const Contact = () => {
           <h2 className="text-2xl text-blue-950 font-semibold mb-6">
             Send a Message
           </h2>
-          <form className="w-xs md:w-lg mx-auto text-gray-600 pt-8 space-y-2">
+          <form
+            onSubmit={onSubmit}
+            className="w-xs md:w-lg mx-auto text-gray-600 pt-8 space-y-2"
+          >
             <div className="w-full md:w-1/2 text-left">
               Your Name
               <input
@@ -134,7 +165,8 @@ const Contact = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded mt-4 cursor-pointer transition-colors duration-300"
               >
                 <Send className="inline mr-2" />
-                Send Message
+
+                {result ? result : "Send Message"}
               </button>
             </div>
           </form>
