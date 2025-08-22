@@ -39,7 +39,7 @@ const Navbar = () => {
             Projects
           </a>
           <a
-            href="#"
+            href="#Contact"
             className="mt-2 cursor-pointer font-semibold hover:text-gray-600"
           >
             Contact
@@ -94,7 +94,7 @@ const Navbar = () => {
             Projects
           </a>
           <a
-            href="#"
+            href="#Contact"
             className="px-4 py-3 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
