@@ -7,7 +7,6 @@ import {
   SiJavascript,
   SiReact,
   SiTailwindcss,
-  SiVite,
   SiGit,
 } from "react-icons/si";
 import { Code } from "lucide-react";

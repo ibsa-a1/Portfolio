@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
@@ -16,9 +16,11 @@ const Contact = () => {
         </span>
       </h1>
       <p className="text-gray-500 w-3/4 text-center mb-8 mx-auto">
-        Have a question or want to work together? Feel free to contact me!
+        I'm currently available for freelance work or internship opportunities.
+        Feel free to reach out if you have a project in mind or just want to
+        connect!
       </p>
-      <div className="flex flex-col-reverse md:flex-row gap-20 lg:gap-100 justify-center items-center">
+      <div className="flex flex-col-reverse md:flex-row gap-20 lg:gap-40 justify-center items-center">
         <div>
           <h2 className="text-2xl text-blue-950 font-semibold mb-6">
             Contact Information
@@ -92,7 +94,51 @@ const Contact = () => {
             </a>
           </div>
         </div>
-        <div>Contact Form</div>
+        <div className="shadow-lg p-6 rounded-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 ">
+          <h2 className="text-2xl text-blue-950 font-semibold mb-6">
+            Send a Message
+          </h2>
+          <form className="w-xs md:w-lg mx-auto text-gray-600 pt-8 space-y-2">
+            <div className="w-full md:w-1/2 text-left">
+              Your Name
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-xs md:w-md border border-gray-300 rounded py-3 px-4 mt-2"
+              />
+            </div>
+            <div className="w-full md:w-1/2 text-left ">
+              Your Email
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+                className="w-xs md:w-md border border-gray-300 rounded py-3 px-4 mt-2"
+              />
+            </div>
+            <div className="w-full md:w-1/2 text-left ">
+              Message
+              <textarea
+                name="message"
+                placeholder="Your Email"
+                required
+                className="w-xs md:w-md border border-gray-300 rounded py-3 px-4 mt-2 resize-none h-32"
+              />
+            </div>
+            <div className="w-full  flex justify-center items-center">
+              <button
+                type="submit"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded mt-4 cursor-pointer transition-colors duration-300"
+              >
+                <Send className="inline mr-2" />
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
