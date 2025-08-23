@@ -8,7 +8,12 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="bg-white min-h-screen">
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        toastClassName="custom-toast"
+        bodyClassName="custom-toast-body"
+      />
       <Header />
       <About />
       <Projects />

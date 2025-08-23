@@ -48,8 +48,8 @@ const Contact = () => {
         Feel free to reach out if you have a project in mind or just want to
         connect!
       </p>
-      <div className="flex flex-col-reverse md:flex-row gap-20 lg:gap-40 justify-center items-center">
-        <div>
+      <div className="flex flex-col-reverse md:flex-row gap-20 sm:gap-0 lg:gap-30 justify-center items-center">
+        <div className="w-full md:w-1/2 space-y-8">
           <h2 className="text-2xl text-blue-950 font-semibold mb-6">
             Contact Information
           </h2>
@@ -122,41 +122,41 @@ const Contact = () => {
             </a>
           </div>
         </div>
-        <div className="shadow-lg p-6 rounded-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 ">
+        <div className="shadow-lg p-6 rounded-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 w-full md:w-1/2">
           <h2 className="text-2xl text-blue-950 font-semibold mb-6">
             Send a Message
           </h2>
           <form
             onSubmit={onSubmit}
-            className="w-xs md:w-lg mx-auto text-gray-600 pt-8 space-y-2"
+            className=" mx-auto text-gray-600 pt-8 space-y-2 max-w-lg w-full"
           >
-            <div className="w-full md:w-1/2 text-left">
+            <div className=" text-left">
               Your Name
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-xs md:w-md border border-gray-300 rounded py-3 px-4 mt-2"
+                className="w-full border border-gray-300 rounded py-3 px-4 mt-2"
               />
             </div>
-            <div className="w-full md:w-1/2 text-left ">
+            <div className=" text-left ">
               Your Email
               <input
                 type="email"
                 name="Email"
                 placeholder="Your Email"
                 required
-                className="w-xs md:w-md border border-gray-300 rounded py-3 px-4 mt-2"
+                className="w-full border border-gray-300 rounded py-3 px-4 mt-2"
               />
             </div>
-            <div className="w-full md:w-1/2 text-left ">
+            <div className=" text-left ">
               Message
               <textarea
                 name="message"
                 placeholder="Your Email"
                 required
-                className="w-xs md:w-md border border-gray-300 rounded py-3 px-4 mt-2 resize-none h-32"
+                className="w-full border border-gray-300 rounded py-3 px-4 mt-2 resize-none h-32"
               />
             </div>
             <div className="w-full  flex justify-center items-center">

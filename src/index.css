@@ -1,1 +1,28 @@
 @import "tailwindcss";
+@layer components {
+  .custom-toast {
+    @apply rounded-lg shadow-lg;
+  }
+
+  .custom-toast-body {
+    @apply text-sm; /* smaller text size */
+  }
+
+  @media (max-width: 640px) {
+    .custom-toast {
+      @apply max-w-xs p-2; /* reduce width & padding on mobile */
+    }
+    .custom-toast-body {
+      @apply text-xs; /* even smaller text */
+    }
+  }
+  .Toastify__close-button {
+    @apply text-gray-600;
+  }
+
+  @media (max-width: 640px) {
+    .Toastify__close-button {
+      @apply scale-90 mr-4 mt-1; /* smaller + closer to corner */
+    }
+  }
+}
