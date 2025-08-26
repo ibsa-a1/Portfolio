@@ -10,7 +10,7 @@ import project_img_1 from "./project_img_1.jpg";
 import project_img_2 from "./project_img_2.jpg";
 import project_img_3 from "./project_img_3.jpg";
 import project_img_4 from "./project_img_4.jpg";
-import chakra_img from "./chakra_img.png";
+import vite_logo from "./vite_logo.svg";
 
 
 export const assets = {
@@ -26,7 +26,7 @@ export const assets = {
     project_img_2,
     project_img_3,
     project_img_4,
-    chakra_img,
+    vite_logo,
 };
 
 export const projectsData = [

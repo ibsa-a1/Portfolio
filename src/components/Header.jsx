@@ -8,6 +8,7 @@ import {
   SiReact,
   SiTailwindcss,
   SiGit,
+  SiChakraui,
 } from "react-icons/si";
 import { Code } from "lucide-react";
 
@@ -47,49 +48,167 @@ const Header = () => {
             Tech Stack <span className="hidden md:inline">|</span>{" "}
           </p>{" "}
           <div className="flex gap-3 md:gap-8 mt-2 mb-5">
-            <SiHtml5
-              color="#E34F26"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
-            <SiCss3
-              color="#1572B6"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
-            <SiJavascript
-              color="#F7DF1E"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
+            <div className="relative group">
+              <SiHtml5
+                color="#E34F26"
+                className="h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3"
+              />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                HTML5
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
 
-            <SiTailwindcss
-              color="#06B6D4"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
+            <div className="relative group">
+              <SiCss3
+                color="#1572B6"
+                className="h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3"
+              />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                CSS3
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
 
-            <img
-              src={assets.chakra_img}
-              className="h-10 w-10 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
+            <div className="relative group">
+              <SiJavascript
+                color="#F7DF1E"
+                className="h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3"
+              />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                JavaScript
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
 
-            <SiReact
-              color="#61DAFB"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
+            <div className="relative group">
+              <SiTailwindcss
+                color="#06B6D4"
+                className="h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3"
+              />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                TailwindCSS
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
 
-            <img
-              src="https://vitejs.dev/logo.svg"
-              alt="Vite Logo"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
+            <div className="relative group">
+              <SiChakraui className="text-teal-400 h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3" />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                Chakra-UI
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
 
-            <SiGit
-              color="#F05032"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
+            <div className="relative group">
+              <SiReact
+                color="#61DAFB"
+                className="h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3"
+              />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                React
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
+
+            <div className="relative group">
+              <img
+                src={assets.vite_logo}
+                className="h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3"
+              />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                Vite
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
+
+            <div className="relative group">
+              <SiGit
+                color="#F05032"
+                className="h-10 w-8 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-3"
+              />
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+  px-2 py-1 text-xs text-white bg-gray-800/90 rounded-md shadow-lg
+  opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 
+  transition-all duration-300 whitespace-nowrap"
+              >
+                Git
+                {/* Small arrow */}
+                <span
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 
+    w-2 h-2 bg-gray-800/90 rotate-45"
+                ></span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="relative mt-48 sm:mt-28 lg:mt-0">
+      <div className="relative mt-48 sm:mt-28 md:mt-0">
         <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
           <img
             src={assets.profile_img}
