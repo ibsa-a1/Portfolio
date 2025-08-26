@@ -22,27 +22,31 @@ const Navbar = () => {
         <ul className="hidden md:flex gap-7 text-black">
           <a
             href="#"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600"
+            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
           >
             Home
+            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
           </a>
           <a
             href="#About"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600"
+            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
           >
             About
+            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
           </a>
           <a
             href="#Projects"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600"
+            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
           >
             Projects
+            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
           </a>
           <a
             href="#Contact"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600"
+            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
           >
             Contact
+            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
           </a>
           <a href="#Contact">
             <button className="hidden md:block bg-blue-600 hover:bg-blue-700 font-semibold text-white py-2 px-4 rounded-full cursor-pointer">
