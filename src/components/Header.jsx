@@ -46,7 +46,7 @@ const Header = () => {
           <p className="text-xl mt-2 text-gray-600 font-semibold">
             Tech Stack <span className="hidden md:inline">|</span>{" "}
           </p>{" "}
-          <div className="flex gap-4 md:gap-8 mt-2 mb-5">
+          <div className="flex gap-3 md:gap-8 mt-2 mb-5">
             <SiHtml5
               color="#E34F26"
               className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
@@ -59,12 +59,19 @@ const Header = () => {
               color="#F7DF1E"
               className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
             />
-            <SiReact
-              color="#61DAFB"
-              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
-            />
+
             <SiTailwindcss
               color="#06B6D4"
+              className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
+            />
+
+            <img
+              src={assets.chakra_img}
+              className="h-10 w-10 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
+            />
+
+            <SiReact
+              color="#61DAFB"
               className="h-10 w-8 transition-transform duration-200 hover:scale-110 hover:-translate-y-3"
             />
 
