@@ -4,6 +4,37 @@ import { FaGithub } from "react-icons/fa";
 export default function ProjectCard({ project, index }) {
   const isEven = index % 2 === 0;
 
+  const highlightTech = (text) => {
+    const techs = [
+      "React",
+      "Tailwind CSS",
+      "Chakra UI",
+      "Framer Motion",
+      "Toastify",
+      "Web3",
+      "Piston API",
+      "TMDB API",
+      "Leaflet",
+      "OpenStreetMap",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "local storage",
+      "startup",
+    ];
+    const parts = text.split(new RegExp(`(${techs.join("|")})`, "gi"));
+
+    return parts.map((part, index) =>
+      techs.includes(part) ? (
+        <span key={index} className="text-blue-600 font-semibold">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
   return (
     <section
       className={`flex flex-col items-center gap-6 my-12 md:my-16
@@ -28,8 +59,9 @@ export default function ProjectCard({ project, index }) {
       {/* Text */}
       <div className="w-full md:w-1/2">
         <h3 className="text-2xl md:text-3xl font-semibold">{project.title}</h3>
+
         <p className="mt-3 text-sm md:text-base text-gray-600">
-          {project.description}
+          {highlightTech(project.description)}
         </p>
 
         {/* Buttons */}
