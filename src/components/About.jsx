@@ -31,7 +31,7 @@ const About = () => {
               repeatType: "loop",
               ease: "linear",
             }}
-            src={assets.dev_image}
+            src={assets.dev_img}
             alt="Image 2"
             className="absolute bottom-0 right-0 w-24 h-24 md:w-40 md:h-40 sm:w-32 sm:h-32 rounded-full translate-x-1/4 translate-y-1/4"
           />

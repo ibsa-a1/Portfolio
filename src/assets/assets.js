@@ -4,7 +4,7 @@ import profile_img from "./profile_img.webp";
 import github_icon from "./github_icon.svg";
 import linkedin_icon from "./linkedin_icon.svg";
 import about_image from "./about_image.jpg";
-import dev_image from "./dev_image.png";
+import dev_img from "./dev_img.png";
 import resume_template from "./resume_template.pdf"
 import project_img_1 from "./project_img_1.jpg";
 import project_img_2 from "./project_img_2.jpg";
@@ -20,7 +20,7 @@ export const assets = {
     github_icon,
     linkedin_icon,
     about_image,
-    dev_image,
+    dev_img,
     resume_template,
     project_img_1,
     project_img_2,
