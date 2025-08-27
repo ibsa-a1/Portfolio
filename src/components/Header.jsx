@@ -11,12 +11,19 @@ import {
   SiChakraui,
 } from "react-icons/si";
 import { Code } from "lucide-react";
+import { motion } from "motion/react";
 
 const Header = () => {
   return (
     <div className="container mx-auto h-screen bg-cover bg-center flex items-center justify-center w-full flex-col-reverse md:flex-row">
       <Navbar />
-      <div className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ duration: 1.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2"
+      >
         <h1 className="text-2xl md:text-3xl font-bold mt-10 mb-5">
           FRONT-END WEBSITE DEVELOPER
         </h1>
@@ -142,9 +149,15 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="relative mt-48 sm:mt-28 md:mt-0">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ duration: 1.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="relative mt-48 sm:mt-28 md:mt-0"
+      >
         <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
           <img
             src={assets.profile_img}
@@ -155,7 +168,7 @@ const Header = () => {
         <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center animate-pulse">
           <Code className="w-8 h-8 text-white" />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

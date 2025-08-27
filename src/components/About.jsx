@@ -1,6 +1,7 @@
 import React from "react";
 import { assets } from "../assets/assets";
 import { Download } from "lucide-react";
+import { motion } from "motion/react";
 
 const About = () => {
   return (
@@ -22,7 +23,14 @@ const About = () => {
             alt="Image 1"
             className="w-full h-full object-cover rounded-lg"
           />
-          <img
+          <motion.img
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear",
+            }}
             src={assets.dev_image}
             alt="Image 2"
             className="absolute bottom-0 right-0 w-24 h-24 md:w-40 md:h-40 sm:w-32 sm:h-32 rounded-full translate-x-1/4 translate-y-1/4"
