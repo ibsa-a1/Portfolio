@@ -29,18 +29,26 @@ const About = () => {
           />
         </div>
         <p className="text-gray-700 mt-16 md:mt-0 text-balance md:text-start w-3/4 md:w-3/4 lg:w-1/2 ">
-          Hey! I’m Ibsa, Frontend Website Developer and I absolutely love
-          building things on the web. React.js is my playground, and I enjoy
-          experimenting with modern technologies to bring ideas to life. I’m all
-          about creating websites that are not only visually appealing but also
-          smooth and easy to use. Working with APIs to make apps dynamic and
+          Hey!{" "}
+          <span className="text-blue-600">
+            I’m Ibsa, Frontend Website Developer
+          </span>{" "}
+          and I absolutely love building things on the web.{" "}
+          <span className="text-blue-600">React.js</span> is my playground, and
+          I enjoy experimenting with modern technologies to bring ideas to life.
+          I’m all about creating websites that are not only visually appealing
+          but also smooth and easy to use. Working with{" "}
+          <span className="text-blue-600">APIs</span> to make apps dynamic and
           interactive is something I genuinely enjoy, and I’m always curious to
-          learn new tools and techniques that make my projects better. I’m
-          currently studying Software Engineering at Addis Ababa Science and
-          Technology University (AASTU), which gives me a strong foundation to
-          turn my ideas into real-world solutions. When I’m not coding, I’m
-          usually exploring new ideas, collaborating with others, or finding
-          ways to challenge myself and grow.
+          learn new tools and techniques that make my projects better.{" "}
+          <span className="text-blue-600">
+            I’m currently studying Software Engineering at Addis Ababa Science
+            and Technology University (AASTU),
+          </span>{" "}
+          which gives me a strong foundation to turn my ideas into real-world
+          solutions. When I’m not coding, I’m usually exploring new ideas,
+          collaborating with others, or finding ways to challenge myself and
+          grow.
         </p>
       </div>
       <div className="flex justify-center mt-8 md:mt-16">
