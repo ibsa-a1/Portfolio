@@ -61,7 +61,7 @@ const About = () => {
       </div>
       <div className="flex justify-center mt-8 md:mt-16">
         <a
-          href={assets.resume_template}
+          href={assets.resume}
           target="_blank"
           rel="noopener noreferrer"
           download
