@@ -17,6 +17,13 @@ const Header = () => {
   return (
     <div className="container mx-auto h-screen bg-cover bg-center flex items-center justify-center w-full flex-col-reverse md:flex-row">
       <Navbar />
+
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-indigo-600/5 rounded-full blur-3xl"></div>
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         transition={{ duration: 1.5 }}
@@ -24,30 +31,58 @@ const Header = () => {
         viewport={{ once: true }}
         className="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2"
       >
-        <h1 className="text-2xl md:text-3xl font-bold mt-10 mb-5">
+        <h1 className="text-2xl md:text-3xl font-bold mt-10 mb-5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
           FRONT-END WEBSITE DEVELOPER
         </h1>
-        <p className="font-semibold w-1/2 sm:w-1/3 md:w-3/4 2xl:w-1/2 text-gray-700 mb-5">
-          Hello👋 I'm Ibsa Abera, a Frontend Developer based at Addis Ababa,
-          Ethiopia.
-          <button className="border border-green-700  rounded-2xl font-bold text-green-700 mx-2 py-1 px-4 hover:bg-green-700 hover:text-white transition-colors duration-300">
-            {""} Open to work
-          </button>
+        <p className="font-semibold w-full sm:w-4/5 md:w-full lg:w-4/5 xl:w-3/4 2xl:w-2/3 text-gray-700 text-base md:text-lg leading-relaxed">
+          <span className="inline-block mr-2 text-2xl">👋</span>
+          Hello! I'm <span className="font-bold text-gray-900">Ibsa Abera</span>
+          , a{" "}
+          <span className="font-bold text-blue-600">Frontend Developer</span>{" "}
+          based in{" "}
+          <span className="font-semibold text-gray-800">
+            Addis Ababa, Ethiopia
+          </span>
+          .
         </p>
-        <div className="flex gap-4 mb-2">
+        <div className="inline-flex items-center my-3">
+          <div className="relative">
+            <button className="group relative overflow-hidden border-2 border-green-600 rounded-full font-bold text-green-700 px-6 py-2 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
+              <span className="absolute inset-0 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              <span className="relative flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                Open to work
+              </span>
+            </button>
+          </div>
+        </div>
+        {/* Enhanced social links */}
+        <div className="flex md:gap-6 md:mb-8 gap-3 mb-4">
           <a
             href="https://github.com/ibsa-a1"
             target="_blank"
             rel="noopener noreferrer"
+            className="group relative"
           >
-            <img src={assets.github_icon} alt="GitHub" className="h-10" />
+            <div className="absolute inset-0 bg-gray-800 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+            <img
+              src={assets.github_icon}
+              alt="GitHub"
+              className="relative h-12 w-12 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 rounded-full bg-white p-1 shadow-lg"
+            />
           </a>
           <a
             href="https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
             target="_blank"
             rel="noopener noreferrer"
+            className="group relative"
           >
-            <img src={assets.linkedin_icon} alt="LinkedIn" className="h-10" />
+            <div className="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+            <img
+              src={assets.linkedin_icon}
+              alt="LinkedIn"
+              className="relative h-12 w-12 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 rounded-full bg-white p-1 shadow-lg"
+            />
           </a>
         </div>
         <div className="flex flex-col lg:flex-row gap-0 md:gap-8 mb-5 ">
