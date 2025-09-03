@@ -4,6 +4,7 @@ import { assets } from "../assets/assets";
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  // Lock/unlock body scroll when menu is open
   useEffect(() => {
     if (showMobileMenu) {
       document.body.style.overflow = "hidden";
@@ -15,95 +16,146 @@ const Navbar = () => {
       document.body.style.overflow = "auto";
     };
   }, [showMobileMenu]);
+
+  // Close menu if resizing to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setShowMobileMenu(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="absolute top-0 left-0 w-full z-10 bg-gray-50">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-20 lg:px-32 bg-transparent">
-        <h2 className="text-2xl font-bold cursor-pointer">Ibsa.dev</h2>
-        <ul className="hidden md:flex gap-7 text-black">
-          <a
-            href="#"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
-          >
-            Home
-            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-          </a>
-          <a
-            href="#About"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
-          >
-            About
-            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-          </a>
-          <a
-            href="#Projects"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
-          >
-            Projects
-            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-          </a>
-          <a
-            href="#Contact"
-            className="mt-2 cursor-pointer font-semibold hover:text-gray-600 relative group"
-          >
-            Contact
-            <span className="absolute left-1/2 -translate-x-1/2 -bottom-0 w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-          </a>
-          <a href="#Contact">
-            <button className="hidden md:block bg-blue-600 hover:bg-blue-700 font-semibold text-white py-2 px-4 rounded-full cursor-pointer">
-              Hire Me
-            </button>
-          </a>
+    <div className="absolute top-0 left-0 w-full z-10 bg-white border-b border-gray-100 shadow-sm">
+      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-20 lg:px-32">
+        {/* Logo */}
+        <h2 className="text-2xl font-bold cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-600 transition-all duration-300">
+          Ibsa.dev
+        </h2>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center gap-8 text-black">
+          <li>
+            <a
+              href="#"
+              className="cursor-pointer font-semibold text-gray-700 hover:text-blue-600 relative group transition-colors duration-300"
+            >
+              Home
+              <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-0 group-hover:w-full h-[2px] bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300"></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#About"
+              className="cursor-pointer font-semibold text-gray-700 hover:text-blue-600 relative group transition-colors duration-300"
+            >
+              About
+              <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-0 group-hover:w-full h-[2px] bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300"></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Projects"
+              className="cursor-pointer font-semibold text-gray-700 hover:text-blue-600 relative group transition-colors duration-300"
+            >
+              Projects
+              <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-0 group-hover:w-full h-[2px] bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300"></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Contact"
+              className="cursor-pointer font-semibold text-gray-700 hover:text-blue-600 relative group transition-colors duration-300"
+            >
+              Contact
+              <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-0 group-hover:w-full h-[2px] bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#Contact">
+              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-semibold text-white py-2.5 px-6 rounded-full cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                Hire Me
+              </button>
+            </a>
+          </li>
         </ul>
-        <img
-          src={assets.menu_icon}
-          alt=""
-          className="md:hidden w-10 cursor-pointer"
-          onClick={() => setShowMobileMenu(true)}
-        />
+
+        {/* Mobile menu button */}
+        <div className="md:hidden relative group">
+          <div className="absolute inset-0 bg-blue-600 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+          <img
+            src={assets.menu_icon}
+            alt="Menu"
+            className="relative w-8 h-8 cursor-pointer transition-transform duration-300 group-hover:scale-110"
+            onClick={() => setShowMobileMenu(true)}
+          />
+        </div>
       </div>
+
       {/* Mobile Menu */}
       <div
-        className={`md:hidden ${
-          showMobileMenu ? "fixed w-full" : "h-0 w-0"
-        } right-0 top-0 bottom-0 overflow-hidden bg-white transition-all`}
+        className={`fixed inset-0 z-20 bg-white transform transition-transform duration-300 ${
+          showMobileMenu ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <div className="flex justify-end p-6 cursor-pointer">
+        {/* Close button */}
+        <div className="flex justify-end p-6">
           <img
             src={assets.cross_icon}
-            alt=""
-            className="md:hidden w-10"
+            alt="Close"
+            className="w-8 h-8 cursor-pointer transition-transform duration-300 hover:scale-110 hover:rotate-90"
             onClick={() => setShowMobileMenu(false)}
           />
         </div>
-        <ul className="flex flex-col items-center gap-0 mt-4 mx-5 text-lg font-medium">
-          <a
-            href="#"
-            className="px-4 py-3 rounded-full inline-block"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Home
-          </a>
-          <a
-            href="#About"
-            className="px-4 py-3 rounded-full inline-block"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            About
-          </a>
-          <a
-            href="#Projects"
-            className="px-4 py-3 rounded-full inline-block"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Projects
-          </a>
-          <a
-            href="#Contact"
-            className="px-4 py-3 rounded-full inline-block"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Contact
-          </a>
+
+        {/* Mobile navigation links */}
+        <ul className="flex flex-col items-center gap-4 mt-8 mx-5 text-lg font-medium">
+          <li>
+            <a
+              href="#"
+              className="w-full text-center px-6 py-4 rounded-2xl text-gray-700 transition-all duration-300"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#About"
+              className="w-full text-center px-6 py-4 rounded-2xl text-gray-700 transition-all duration-300"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Projects"
+              className="w-full text-center px-6 py-4 rounded-2xl text-gray-700 transition-all duration-300"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Contact"
+              className="w-full text-center px-6 py-4 rounded-2xl text-gray-700 transition-all duration-300"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Contact
+            </a>
+          </li>
+          <li className="mt-6">
+            <a href="#Contact" onClick={() => setShowMobileMenu(false)}>
+              <button className="bg-gradient-to-r from-blue-600 to-purple-600 font-semibold text-white py-3 px-8 rounded-full shadow-lg transition-all duration-300">
+                Hire Me
+              </button>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
