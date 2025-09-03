@@ -5,7 +5,10 @@ import { motion } from "motion/react";
 
 const About = () => {
   return (
-    <div className="min-h-screen pt-16 pb-0 px-4 sm:px-6 lg:px-8" id="About">
+    <div
+      className="min-h-screen pt-16 pb-0 px-4 sm:px-6 lg:px-8 mt-8 md:mt-0"
+      id="About"
+    >
       <div className="max-w-7xl mx-auto">
         {" "}
         <div className="text-center mb-16 md:mb-24">
