@@ -22,7 +22,13 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 md:mb-24">
           {" "}
           <div className="flex justify-center lg:justify-start order-1 lg:order-1">
-            <div className="relative group">
+            <motion.div
+              initial={{ opacity: 0, x: -200 }}
+              transition={{ duration: 3 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative group"
+            >
               <div className="relative w-[300px] h-[200px] sm:w-[350px] sm:h-[250px] md:w-[450px] md:h-[300px] lg:w-[480px] lg:h-[320px] transition-transform duration-500 hover:scale-[1.02]">
                 <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
                   <img
@@ -52,9 +58,15 @@ const About = () => {
                   </div>
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className="order-2 lg:order-2">
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            transition={{ duration: 3 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-2 lg:order-2"
+          >
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 max-w-4xl mx-auto lg:mx-0">
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full">
@@ -114,7 +126,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="text-center">
           <div className="inline-block">
