@@ -15,7 +15,7 @@ const Footer = () => {
     <div className="w-full bg-gradient-to-r from-gray-950 via-gray-800 to-gray-950 text-white py-10 px-4 flex flex-col md:flex-row justify-between items-center">
       <div className="mb-6 md:mb-0 ml-2 md:ml-14">
         <h2 className="text-2xl font-bold  mb-2">
-          Ibsa<span className="text-indigo-600">.dev</span>
+          Ibsa <span className="text-indigo-600">A.</span>
         </h2>
         <p className="text-gray-400">
           Software Engineering Student & Frontend Developer

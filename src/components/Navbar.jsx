@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-20 lg:px-32">
         {/* Logo */}
         <h2 className="text-2xl font-bold cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-600 transition-all duration-300">
-          Ibsa.dev
+          Ibsa A.
         </h2>
 
         {/* Desktop Navigation */}
