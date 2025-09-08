@@ -43,14 +43,14 @@ export default function ProjectCard({ project, index }) {
       {/* Image */}
       <div className="w-full md:w-1/2">
         <a
-          href={project.code}
+          href={project.demo}
           alt={project.title}
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
             src={project.image}
-            className="w-full h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02] curson-pointer"
+            className="w-full h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
             loading="lazy"
           />
         </a>
