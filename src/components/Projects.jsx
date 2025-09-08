@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <div
       id="Projects"
-      className="px-6 md:px-16 lg:px-24 py-12 mt-10 md:mt-16 sm:mt-8"
+      className="px-6 md:px-16 lg:px-24 py-12 mt-10 md:mt-16 sm:mt-8 max-w-7xl mx-auto"
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 text-center">
         Projects{" "}
