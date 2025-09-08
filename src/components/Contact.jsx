@@ -54,9 +54,9 @@ const Contact = () => {
             or just want to connect!
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-16 items-start">
           {" "}
-          <div className="space-y-8 lg:space-y-12">
+          <div className="w-full md:w-1/2 space-y-8 lg:space-y-12">
             <div className="text-center lg:text-left">
               <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-8">
                 Contact Information
@@ -147,7 +147,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="w-full">
+          <div className="w-full md:w-1/2">
             <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
               <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-8 text-center">
                 Send a Message
