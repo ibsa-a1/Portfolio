@@ -1,151 +1,117 @@
 import React from "react";
-import { assets } from "../assets/assets";
-import { Download } from "lucide-react";
-import { motion } from "motion/react";
+import { CheckCircle2, Download } from "lucide-react";
+import { motion as Motion } from "motion/react";
+import {
+  assets,
+  expertiseAreas,
+  serviceHighlights,
+} from "../assets/assets";
 
 const About = () => {
   return (
-    <div
-      className="min-h-screen pt-16 pb-0 px-4 sm:px-6 lg:px-8 mt-8 md:mt-0"
-      id="About"
-    >
-      <div className="max-w-7xl mx-auto">
-        {" "}
-        <div className="text-center mb-16 md:mb-24">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-            About{" "}
-            <span className="underline underline-offset-8 decoration-4 decoration-blue-600 font-light">
-              Me
-            </span>
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 md:mb-24">
-          {" "}
-          <div className="flex justify-center lg:justify-start order-1 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, x: -200 }}
-              transition={{ duration: 3 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="relative w-[300px] h-[200px] sm:w-[350px] sm:h-[250px] md:w-[450px] md:h-[300px] lg:w-[480px] lg:h-[320px] transition-transform duration-500 hover:scale-[1.02]">
-                <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
-                  <img
-                    src={assets.about_image}
-                    alt="About me"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                </div>
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "linear",
-                  }}
-                  className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 md:-bottom-8 md:-right-8"
-                >
-                  <div className="relative">
-                    <div className="absolute inset-0  rounded-full "></div>
-                    <img
-                      src={assets.dev_img}
-                      alt="Developer badge"
-                      className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full shadow-2xl"
-                    />
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            transition={{ duration: 3 }}
+    <section id="about" className="py-24 sm:py-28">
+      <div className="section-shell">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <Motion.div
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-2"
+            transition={{ duration: 0.7 }}
+            className="surface-panel overflow-hidden p-4 sm:p-5"
           >
-            <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 max-w-4xl mx-auto lg:mx-0">
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
-                  <span className="text-blue-600 font-medium text-sm">
-                    Frontend Developer
-                  </span>
-                </div>
-
-                <p className="text-gray-700 leading-relaxed text-base md:text-lg">
-                  Hey!{" "}
-                  <span className="text-blue-600 font-semibold">
-                    I'm Ibsa, Frontend Website Developer
-                  </span>{" "}
-                  and I absolutely love building things on the web.{" "}
-                  <span className="text-blue-600 font-semibold">React.js</span>{" "}
-                  is my playground, and I enjoy experimenting with modern
-                  technologies to bring ideas to life.
+            <div className="relative overflow-hidden rounded-[1.75rem]">
+              <img
+                src={assets.about_image}
+                alt="Ibsa Abera at work"
+                className="h-full min-h-[26rem] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 rounded-[1.5rem] border border-white/10 bg-black/40 p-5 backdrop-blur-md">
+                <p className="text-xs uppercase tracking-[0.28em] text-white/45">
+                  Now focused on
                 </p>
-
-                <p className="text-gray-700 leading-relaxed text-base md:text-lg">
-                  I'm all about creating websites that are not only visually
-                  appealing but also smooth and easy to use. Working with{" "}
-                  <span className="text-blue-600 font-semibold">APIs</span> to
-                  make apps dynamic and interactive is something I genuinely
-                  enjoy, and I'm always curious to learn new tools and
-                  techniques that make my projects better.
-                </p>
-
-                <p className="text-gray-700 leading-relaxed text-base md:text-lg">
-                  <span className="text-blue-600 font-semibold">
-                    I'm currently studying Software Engineering at Addis Ababa
-                    Science and Technology University (AASTU),
-                  </span>{" "}
-                  which gives me a strong foundation to turn my ideas into
-                  real-world solutions. When I'm not coding, I'm usually
-                  exploring new ideas, collaborating with others, or finding
-                  ways to challenge myself and grow.
-                </p>
-                <div className="pt-4">
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "React.js",
-                      "JavaScript",
-                      "Frontend",
-                      "APIs",
-                      "UI/UX",
-                    ].map((skill, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-sm font-medium hover:from-blue-200 hover:to-purple-200 transition-colors duration-300"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <h3 className="mt-2 text-2xl font-semibold text-white">
+                  Fullstack web products with React, Node, Express, and MongoDB.
+                </h3>
               </div>
             </div>
-          </motion.div>
-        </div>
-        <div className="text-center">
-          <div className="inline-block">
-            <a
-              href={assets.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Download className="relative w-5 h-5 group-hover:animate-bounce" />
-              <span className="relative">Get My Resume</span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </a>
-          </div>
+          </Motion.div>
+
+          <Motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="space-y-8"
+          >
+            <div>
+              <span className="section-kicker">About Me</span>
+              <h2 className="section-title">
+                From frontend beginnings to{" "}
+                <span className="display-font text-white/80">
+                  fullstack product building.
+                </span>
+              </h2>
+              <div className="section-copy mt-6 space-y-5">
+                <p>
+                  I originally built portfolio sites, landing pages, and UI-heavy
+                  React projects. That frontend foundation still shapes the way I
+                  work today: I care about clarity, usability, and visual polish.
+                </p>
+                <p>
+                  Now I build across the full stack with MERN, creating React
+                  clients, Express APIs, MongoDB-backed features, authentication
+                  flows, and dashboards that connect smoothly from database to UI.
+                </p>
+                <p>
+                  I&apos;m especially motivated by projects where good product
+                  thinking matters just as much as code quality, whether that
+                  means shipping admin tools, customer-facing platforms, or
+                  scalable service layers behind the scenes.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {expertiseAreas.map((item) => (
+                <div key={item.title} className="surface-panel p-5">
+                  <h3 className="text-lg font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-white/60">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="surface-panel p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-white/45">
+                How I Can Help
+              </p>
+              <div className="mt-5 grid gap-4">
+                {serviceHighlights.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-white" />
+                    <p className="text-sm leading-7 text-white/65">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={assets.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="secondary-btn mt-6"
+              >
+                Download Resume
+                <Download className="h-4 w-4" />
+              </a>
+            </div>
+          </Motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

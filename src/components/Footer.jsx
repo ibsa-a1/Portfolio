@@ -1,40 +1,36 @@
 import React from "react";
-import { ChevronUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="w-full bg-gradient-to-r from-gray-950 via-gray-800 to-gray-950 text-white py-10 px-4 flex flex-col md:flex-row justify-between items-center">
-      <div className="mb-6 md:mb-0 ml-2 md:ml-14">
-        <h2 className="text-2xl font-bold  mb-2">
-          Ibsa <span className="text-indigo-600">A.</span>
-        </h2>
-        <p className="text-gray-400">
-          Software Engineering Student & Frontend Developer
-        </p>
-      </div>
+    <footer className="border-t border-white/10 py-8">
+      <div className="section-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-sm uppercase tracking-[0.3em] text-white/40">
+            Ibsa Abera
+          </p>
+          <p className="mt-2 text-sm text-white/55">
+            Fullstack developer building MERN products with strong frontend
+            craft.
+          </p>
+        </div>
 
-      <div className="flex flex-col items-center md:items-end mr-2 md:mr-14">
-        <button
-          onClick={scrollToTop}
-          className="bg-portfolio-primary/20 p-2 rounded-full hover:bg-portfolio-primary/30 transition-colors mb-4"
-          aria-label="Scroll to top"
-        >
-          <ChevronUp className="h-14 w-14 text-[#5555FF] bg-[#242660] rounded-full" />
-        </button>
-        <p className="text-gray-400 text-sm">
-          &copy; {currentYear} Ibsa Abera. All rights reserved.
-        </p>
+        <div className="flex items-center gap-4">
+          <p className="text-sm text-white/45">
+            &copy; {currentYear} All rights reserved.
+          </p>
+          <a
+            href="#top"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/6 p-3 text-white hover:bg-white/10"
+            aria-label="Back to top"
+          >
+            <ArrowUp className="h-4 w-4" />
+          </a>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

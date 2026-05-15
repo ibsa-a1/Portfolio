@@ -1,28 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap");
 @import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(148, 163, 184, 0.1), transparent 30%),
+    #050505;
+  color: #f5f5f5;
+}
+
+a,
+button,
+input,
+textarea {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+::selection {
+  background: rgba(245, 245, 245, 0.16);
+  color: #ffffff;
+}
+
 @layer components {
+  .display-font {
+    font-family: "Instrument Serif", Georgia, serif;
+    letter-spacing: -0.03em;
+  }
+
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-kicker {
+    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-white/70;
+  }
+
+  .section-title {
+    @apply text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl;
+  }
+
+  .section-copy {
+    @apply max-w-3xl text-base leading-8 text-white/65 sm:text-lg;
+  }
+
+  .surface-panel {
+    @apply rounded-[2rem] border border-white/10 bg-white/6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md;
+  }
+
+  .ghost-panel {
+    @apply rounded-[1.5rem] border border-white/10 bg-black/35;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-sm text-white/70;
+  }
+
+  .primary-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white px-5 py-3 text-sm font-semibold text-black shadow-[0_10px_40px_rgba(255,255,255,0.15)] hover:-translate-y-0.5 hover:bg-neutral-200;
+  }
+
+  .secondary-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/14 bg-white/6 px-5 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:bg-white/10;
+  }
+
+  .input-shell {
+    @apply w-full rounded-2xl border border-white/12 bg-white/5 px-4 py-4 text-sm text-white outline-none placeholder:text-white/35 focus:border-white/30 focus:bg-white/8;
+  }
+
   .custom-toast {
-    @apply rounded-lg shadow-lg;
+    @apply rounded-2xl border border-white/10 bg-neutral-900 text-white shadow-2xl;
   }
 
   .custom-toast-body {
-    @apply text-sm; /* smaller text size */
+    @apply text-sm text-white;
   }
 
-  @media (max-width: 640px) {
-    .custom-toast {
-      @apply max-w-xs p-2; /* reduce width & padding on mobile */
-    }
-    .custom-toast-body {
-      @apply text-xs; /* even smaller text */
-    }
-  }
   .Toastify__close-button {
-    @apply text-gray-600;
-  }
-
-  @media (max-width: 640px) {
-    .Toastify__close-button {
-      @apply scale-90 mr-4 mt-1; /* smaller + closer to corner */
-    }
+    @apply text-white/70;
   }
 }

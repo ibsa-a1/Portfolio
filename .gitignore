@@ -25,3 +25,10 @@ dist-ssr
 
 #Environmental Variable For Web3 Public key
 .env
+
+# Docker (not needed for this project)
+Dockerfile
+.dockerignore
+
+# Codex AI workspace config
+.codex
