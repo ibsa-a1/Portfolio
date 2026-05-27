@@ -76,7 +76,9 @@ const Contact = () => {
               <span className="section-kicker">Contact</span>
               <h2 className="section-title">
                 Let&apos;s build something{" "}
-                <span className="display-font text-slate-900/80 dark:text-white/80">useful and sharp.</span>
+                <span className="display-font text-slate-900/80 dark:text-white/80">
+                  useful and sharp.
+                </span>
               </h2>
               <p className="section-copy mt-6">
                 I&apos;m available for freelance work, internships, and product
@@ -106,7 +108,9 @@ const Contact = () => {
                           {value}
                         </a>
                       ) : (
-                        <p className="mt-2 text-base text-slate-700/80 dark:text-white/80">{value}</p>
+                        <p className="mt-2 text-base text-slate-700/80 dark:text-white/80">
+                          {value}
+                        </p>
                       )}
                     </div>
                   </div>

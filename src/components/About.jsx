@@ -1,11 +1,7 @@
 import React from "react";
 import { CheckCircle2, Download } from "lucide-react";
 import { motion as Motion } from "motion/react";
-import {
-  assets,
-  expertiseAreas,
-  serviceHighlights,
-} from "../assets/assets";
+import { assets, expertiseAreas, serviceHighlights } from "../assets/assets";
 
 const About = () => {
   return (
@@ -54,14 +50,16 @@ const About = () => {
               </h2>
               <div className="section-copy mt-6 space-y-5">
                 <p>
-                  I originally built portfolio sites, landing pages, and UI-heavy
-                  React projects. That frontend foundation still shapes the way I
-                  work today: I care about clarity, usability, and visual polish.
+                  I originally built portfolio sites, landing pages, and
+                  UI-heavy React projects. That frontend foundation still shapes
+                  the way I work today: I care about clarity, usability, and
+                  visual polish.
                 </p>
                 <p>
                   Now I build across the full stack with MERN, creating React
                   clients, Express APIs, MongoDB-backed features, authentication
-                  flows, and dashboards that connect smoothly from database to UI.
+                  flows, and dashboards that connect smoothly from database to
+                  UI.
                 </p>
                 <p>
                   I&apos;m especially motivated by projects where good product
@@ -93,7 +91,9 @@ const About = () => {
                 {serviceHighlights.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-slate-950 dark:text-white" />
-                    <p className="text-sm leading-7 text-slate-700/70 dark:text-white/65">{item}</p>
+                    <p className="text-sm leading-7 text-slate-700/70 dark:text-white/65">
+                      {item}
+                    </p>
                   </div>
                 ))}
               </div>

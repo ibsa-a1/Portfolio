@@ -70,8 +70,8 @@ const Header = () => {
             <p className="section-copy mt-6">
               I started as a frontend developer and now build complete MERN
               experiences, from polished React interfaces to reliable Node,
-              Express, and MongoDB backends. I care about how products feel,
-              how they scale, and how cleanly everything connects.
+              Express, and MongoDB backends. I care about how products feel, how
+              they scale, and how cleanly everything connects.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -117,8 +117,12 @@ const Header = () => {
             <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {heroStats.map((item) => (
                 <div key={item.label} className="ghost-panel p-4">
-                  <p className="text-2xl font-semibold text-slate-950 dark:text-white">{item.value}</p>
-                  <p className="mt-1 text-sm text-slate-600 dark:text-white/55">{item.label}</p>
+                  <p className="text-2xl font-semibold text-slate-950 dark:text-white">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-white/55">
+                    {item.label}
+                  </p>
                 </div>
               ))}
             </div>

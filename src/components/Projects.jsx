@@ -24,7 +24,7 @@ export default function Projects() {
         <div className="space-y-10">
           {projectCategories.map((category) => {
             const groupedProjects = projectsData.filter(
-              (project) => project.category === category.id
+              (project) => project.category === category.id,
             );
 
             return (
