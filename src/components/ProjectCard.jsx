@@ -44,24 +44,24 @@ export default function ProjectCard({ project }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
         <div className="absolute left-5 top-5 flex flex-wrap gap-2">
-          <span className="tag border-white/15 bg-black/45 text-white">
+          <span className="tag border-slate-200/15 bg-slate-100/60 text-slate-950 transition-colors duration-200 dark:border-white/15 dark:bg-black/45 dark:text-white">
             <CategoryIcon className="mr-2 h-4 w-4" />
             {meta.label}
           </span>
-          <span className="tag border-white/15 bg-black/45 text-white/80">
+          <span className="tag border-slate-200/15 bg-slate-100/60 text-slate-950/80 transition-colors duration-200 dark:border-white/15 dark:bg-black/45 dark:text-white/80">
             {project.status}
           </span>
         </div>
       </div>
 
       <div className="p-6">
-        <p className="text-sm uppercase tracking-[0.25em] text-white/40">
+        <p className="text-sm uppercase tracking-[0.25em] text-slate-600/80 dark:text-white/40">
           {project.summary}
         </p>
-        <h3 className="mt-3 text-2xl font-semibold text-white">
+        <h3 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white">
           {project.title}
         </h3>
-        <p className="mt-4 text-sm leading-7 text-white/62">
+        <p className="mt-4 text-sm leading-7 text-slate-700/75 dark:text-white/62">
           {project.description}
         </p>
 
@@ -77,7 +77,7 @@ export default function ProjectCard({ project }) {
           {project.highlights.map((point) => (
             <div
               key={point}
-              className="rounded-2xl border border-white/8 bg-black/25 px-4 py-3 text-sm leading-6 text-white/65"
+              className="rounded-2xl border border-slate-200/8 bg-slate-100/25 px-4 py-3 text-sm leading-6 text-slate-700/70 transition-colors duration-200 dark:border-white/8 dark:bg-black/25 dark:text-white/65"
             >
               {point}
             </div>

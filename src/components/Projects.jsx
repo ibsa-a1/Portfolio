@@ -10,7 +10,7 @@ export default function Projects() {
           <span className="section-kicker">Projects</span>
           <h2 className="section-title">
             Portfolio now organized around{" "}
-            <span className="display-font text-white/80">
+            <span className="display-font text-slate-900/80 dark:text-white/80">
               frontend, backend, and fullstack work.
             </span>
           </h2>
@@ -29,16 +29,16 @@ export default function Projects() {
 
             return (
               <section key={category.id} className="surface-panel p-6 sm:p-8">
-                <div className="mb-8 flex flex-col gap-4 border-b border-white/10 pb-6 lg:flex-row lg:items-end lg:justify-between">
+                <div className="mb-8 flex flex-col gap-4 border-b border-slate-200/15 pb-6 lg:flex-row lg:items-end lg:justify-between dark:border-white/10">
                   <div>
-                    <p className="text-sm uppercase tracking-[0.3em] text-white/40">
+                    <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
                       {category.eyebrow}
                     </p>
-                    <h3 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+                    <h3 className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white sm:text-4xl">
                       {category.label} Projects
                     </h3>
                   </div>
-                  <p className="max-w-2xl text-sm leading-7 text-white/60">
+                  <p className="max-w-2xl text-sm leading-7 text-slate-700/70 dark:text-white/60">
                     {category.description}
                   </p>
                 </div>

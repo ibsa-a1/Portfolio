@@ -26,11 +26,11 @@ const About = () => {
                 className="h-full min-h-[26rem] w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 rounded-[1.5rem] border border-white/10 bg-black/40 p-5 backdrop-blur-md">
-                <p className="text-xs uppercase tracking-[0.28em] text-white/45">
+              <div className="absolute bottom-5 left-5 right-5 rounded-[1.5rem] border border-slate-200/10 bg-slate-100/40 p-5 backdrop-blur-md transition-colors duration-200 dark:border-white/10 dark:bg-black/40">
+                <p className="text-xs uppercase tracking-[0.28em] text-slate-600/80 dark:text-white/45">
                   Now focused on
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">
+                <h3 className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">
                   Fullstack web products with React, Node, Express, and MongoDB.
                 </h3>
               </div>
@@ -48,7 +48,7 @@ const About = () => {
               <span className="section-kicker">About Me</span>
               <h2 className="section-title">
                 From frontend beginnings to{" "}
-                <span className="display-font text-white/80">
+                <span className="display-font text-slate-900/80 dark:text-white/80">
                   fullstack product building.
                 </span>
               </h2>
@@ -75,10 +75,10 @@ const About = () => {
             <div className="grid gap-4 sm:grid-cols-2">
               {expertiseAreas.map((item) => (
                 <div key={item.title} className="surface-panel p-5">
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-slate-950 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-white/60">
+                  <p className="mt-3 text-sm leading-7 text-slate-700/70 dark:text-white/60">
                     {item.description}
                   </p>
                 </div>
@@ -86,14 +86,14 @@ const About = () => {
             </div>
 
             <div className="surface-panel p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/45">
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/45">
                 How I Can Help
               </p>
               <div className="mt-5 grid gap-4">
                 {serviceHighlights.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-white" />
-                    <p className="text-sm leading-7 text-white/65">{item}</p>
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-slate-950 dark:text-white" />
+                    <p className="text-sm leading-7 text-slate-700/70 dark:text-white/65">{item}</p>
                   </div>
                 ))}
               </div>

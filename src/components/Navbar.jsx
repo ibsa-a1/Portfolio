@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks } from "../assets/assets";
+import { useTheme } from "./ThemeContext";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     document.body.style.overflow = showMobileMenu ? "hidden" : "auto";
@@ -34,21 +36,47 @@ const Navbar = () => {
               ))}
             </nav>
 
-            <div className="hidden md:block">
+            <div className="hidden md:flex items-center gap-4">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="rounded-full border border-white/10 bg-white/6 p-2 text-white hover:bg-white/10"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </button>
               <a href="#contact" className="secondary-btn px-4 py-2">
                 Let&apos;s talk
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setShowMobileMenu(true)}
-              className="rounded-full border border-white/10 bg-white/6 p-2 text-white md:hidden"
-              aria-label="Open navigation menu"
-            >
-              <Menu className="h-5 w-5" />
-            </button>
+            <div className="flex items-center gap-4 md:hidden">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="rounded-full border border-white/10 bg-white/6 p-2 text-white hover:bg-white/10"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowMobileMenu(true)}
+                className="rounded-full border border-white/10 bg-white/6 p-2 text-white"
+                aria-label="Open navigation menu"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -69,14 +97,28 @@ const Navbar = () => {
             <span className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
               Navigation
             </span>
-            <button
-              type="button"
-              onClick={() => setShowMobileMenu(false)}
-              className="rounded-full border border-white/10 bg-white/6 p-2 text-white"
-              aria-label="Close navigation menu"
-            >
-              <X className="h-5 w-5" />
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="rounded-full border border-white/10 bg-white/6 p-2 text-white hover:bg-white/10"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowMobileMenu(false)}
+                className="rounded-full border border-white/10 bg-white/6 p-2 text-white"
+                aria-label="Close navigation menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
           </div>
 
           <nav className="flex flex-col gap-4">

@@ -76,7 +76,7 @@ const Contact = () => {
               <span className="section-kicker">Contact</span>
               <h2 className="section-title">
                 Let&apos;s build something{" "}
-                <span className="display-font text-white/80">useful and sharp.</span>
+                <span className="display-font text-slate-900/80 dark:text-white/80">useful and sharp.</span>
               </h2>
               <p className="section-copy mt-6">
                 I&apos;m available for freelance work, internships, and product
@@ -89,24 +89,24 @@ const Contact = () => {
               {contactCards.map(({ icon, label, value, href }) => (
                 <div key={label} className="surface-panel p-5">
                   <div className="flex items-start gap-4">
-                    <div className="rounded-2xl border border-white/10 bg-white/8 p-3">
+                    <div className="rounded-2xl border border-slate-200/10 bg-slate-100/8 p-3 transition-colors duration-200 dark:border-white/10 dark:bg-white/8">
                       {createElement(icon, {
-                        className: "h-5 w-5 text-white",
+                        className: "h-5 w-5 text-slate-950 dark:text-white",
                       })}
                     </div>
                     <div>
-                      <p className="text-sm uppercase tracking-[0.22em] text-white/40">
+                      <p className="text-sm uppercase tracking-[0.22em] text-slate-600/80 dark:text-white/40">
                         {label}
                       </p>
                       {href ? (
                         <a
                           href={href}
-                          className="mt-2 inline-block text-base text-white/80 hover:text-white"
+                          className="mt-2 inline-block text-base text-slate-700/80 transition-colors duration-200 hover:text-slate-950 dark:text-white/80 dark:hover:text-white"
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="mt-2 text-base text-white/80">{value}</p>
+                        <p className="mt-2 text-base text-slate-700/80 dark:text-white/80">{value}</p>
                       )}
                     </div>
                   </div>
@@ -115,7 +115,7 @@ const Contact = () => {
             </div>
 
             <div className="surface-panel p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/40">
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
                 Online
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
@@ -146,20 +146,20 @@ const Contact = () => {
           </div>
 
           <div className="surface-panel p-6 sm:p-8">
-            <p className="text-sm uppercase tracking-[0.3em] text-white/40">
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
               Send a Message
             </p>
-            <h3 className="mt-4 text-3xl font-semibold text-white">
+            <h3 className="mt-4 text-3xl font-semibold text-slate-950 dark:text-white">
               Tell me what you&apos;re building.
             </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-white/60">
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-700/70 dark:text-white/60">
               Share the product idea, business goal, or feature you need help
               with. I&apos;ll reply as soon as I can.
             </p>
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">
               <div>
-                <label className="mb-2 block text-sm text-white/65">
+                <label className="mb-2 block text-sm text-slate-600 dark:text-white/65">
                   Your name
                 </label>
                 <input
@@ -172,7 +172,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm text-white/65">
+                <label className="mb-2 block text-sm text-slate-600 dark:text-white/65">
                   Your email
                 </label>
                 <input
@@ -185,7 +185,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm text-white/65">
+                <label className="mb-2 block text-sm text-slate-600 dark:text-white/65">
                   Project details
                 </label>
                 <textarea

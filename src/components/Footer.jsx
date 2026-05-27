@@ -5,25 +5,25 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 py-8">
+    <footer className="border-t border-slate-200/10 py-8 transition-colors duration-200 dark:border-white/10">
       <div className="section-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-white/40">
+          <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
             Ibsa Abera
           </p>
-          <p className="mt-2 text-sm text-white/55">
+          <p className="mt-2 text-sm text-slate-700/70 dark:text-white/55">
             Fullstack developer building MERN products with strong frontend
             craft.
           </p>
         </div>
 
         <div className="flex items-center gap-4">
-          <p className="text-sm text-white/45">
+          <p className="text-sm text-slate-600/80 dark:text-white/45">
             &copy; {currentYear} All rights reserved.
           </p>
           <a
             href="#top"
-            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/6 p-3 text-white hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-full border border-slate-200/10 bg-slate-100/70 p-3 text-slate-950 transition-colors duration-200 hover:bg-slate-200/70 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
             aria-label="Back to top"
           >
             <ArrowUp className="h-4 w-4" />

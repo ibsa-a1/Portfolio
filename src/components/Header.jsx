@@ -63,7 +63,7 @@ const Header = () => {
             <span className="section-kicker">MERN Fullstack Developer</span>
             <h1 className="section-title">
               Building modern products across{" "}
-              <span className="display-font text-white/80">
+              <span className="display-font text-slate-900/80 dark:text-white/80">
                 frontend, backend, and fullstack systems.
               </span>
             </h1>
@@ -98,7 +98,7 @@ const Header = () => {
                 href="https://github.com/ibsa-a1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tag hover:bg-white/10 hover:text-white"
+                className="tag hover:bg-slate-200/80 hover:text-slate-950 dark:hover:bg-white/10 dark:hover:text-white"
               >
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
@@ -107,7 +107,7 @@ const Header = () => {
                 href="https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tag hover:bg-white/10 hover:text-white"
+                className="tag hover:bg-slate-200/80 hover:text-slate-950 dark:hover:bg-white/10 dark:hover:text-white"
               >
                 <Linkedin className="mr-2 h-4 w-4" />
                 LinkedIn
@@ -117,8 +117,8 @@ const Header = () => {
             <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {heroStats.map((item) => (
                 <div key={item.label} className="ghost-panel p-4">
-                  <p className="text-2xl font-semibold text-white">{item.value}</p>
-                  <p className="mt-1 text-sm text-white/55">{item.label}</p>
+                  <p className="text-2xl font-semibold text-slate-950 dark:text-white">{item.value}</p>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-white/55">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -146,16 +146,16 @@ const Header = () => {
                     key={title}
                     className="ghost-panel flex items-start gap-4 p-4"
                   >
-                    <div className="rounded-2xl border border-white/10 bg-white/8 p-3">
+                    <div className="rounded-2xl border border-slate-200/10 bg-slate-100/8 p-3 transition-colors duration-200 dark:border-white/10 dark:bg-white/8">
                       {createElement(icon, {
-                        className: "h-5 w-5 text-white",
+                        className: "h-5 w-5 text-slate-950 dark:text-white",
                       })}
                     </div>
                     <div>
-                      <h3 className="text-base font-semibold text-white">
+                      <h3 className="text-base font-semibold text-slate-950 dark:text-white">
                         {title}
                       </h3>
-                      <p className="mt-1 text-sm leading-6 text-white/60">
+                      <p className="mt-1 text-sm leading-6 text-slate-700/70 dark:text-white/60">
                         {text}
                       </p>
                     </div>
@@ -175,10 +175,10 @@ const Header = () => {
         >
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/45">
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/45">
                 Current Stack
               </p>
-              <h2 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
+              <h2 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">
                 Stronger on the frontend, now shipping complete MERN workflows.
               </h2>
             </div>
