@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks } from "../assets/assets";
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "./useTheme";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -19,8 +19,8 @@ const Navbar = () => {
     <>
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
         <div className="section-shell">
-          <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-black/45 px-5 py-3 backdrop-blur-xl">
-            <a href="#top" className="text-sm font-semibold uppercase tracking-[0.35em] text-white/80">
+          <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-slate-200/70 bg-white/75 px-5 py-3 shadow-[0_18px_50px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-black/45 dark:shadow-none">
+            <a href="#top" className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900/80 dark:text-white/80">
               Ibsa Abera
             </a>
 
@@ -29,7 +29,7 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-white/65 hover:text-white"
+                  className="text-sm text-slate-700/75 hover:text-slate-950 dark:text-white/65 dark:hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -40,7 +40,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="rounded-full border border-white/10 bg-white/6 p-2 text-white hover:bg-white/10"
+                className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 hover:bg-slate-200/70 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
@@ -59,7 +59,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="rounded-full border border-white/10 bg-white/6 p-2 text-white hover:bg-white/10"
+                className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 hover:bg-slate-200/70 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
@@ -71,7 +71,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setShowMobileMenu(true)}
-                className="rounded-full border border-white/10 bg-white/6 p-2 text-white"
+                className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 dark:border-white/10 dark:bg-white/6 dark:text-white"
                 aria-label="Open navigation menu"
               >
                 <Menu className="h-5 w-5" />
@@ -82,26 +82,26 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`fixed inset-0 z-[60] bg-black/80 backdrop-blur-xl transition ${
+        className={`fixed inset-0 z-[60] bg-white/80 backdrop-blur-xl transition dark:bg-black/80 ${
           showMobileMenu
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
         }`}
       >
         <div
-          className={`absolute right-0 top-0 h-full w-full max-w-sm border-l border-white/10 bg-[#0a0a0a] p-6 transition-transform duration-300 ${
+          className={`absolute right-0 top-0 h-full w-full max-w-sm border-l border-slate-200/80 bg-white p-6 transition-transform duration-300 dark:border-white/10 dark:bg-[#0a0a0a] ${
             showMobileMenu ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="mb-12 flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
+            <span className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-600/70 dark:text-white/50">
               Navigation
             </span>
             <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="rounded-full border border-white/10 bg-white/6 p-2 text-white hover:bg-white/10"
+                className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 hover:bg-slate-200/70 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
@@ -113,7 +113,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setShowMobileMenu(false)}
-                className="rounded-full border border-white/10 bg-white/6 p-2 text-white"
+                className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 dark:border-white/10 dark:bg-white/6 dark:text-white"
                 aria-label="Close navigation menu"
               >
                 <X className="h-5 w-5" />
@@ -127,7 +127,7 @@ const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 onClick={() => setShowMobileMenu(false)}
-                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-lg text-white/80 hover:bg-white/8 hover:text-white"
+                className="rounded-2xl border border-slate-200/80 bg-slate-100/70 px-5 py-4 text-lg text-slate-800/80 hover:bg-slate-200/70 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-white/80 dark:hover:bg-white/8 dark:hover:text-white"
               >
                 {link.label}
               </a>

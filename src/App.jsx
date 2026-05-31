@@ -3,7 +3,8 @@ import Header from "./components/Header";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { ThemeProvider, useTheme } from "./components/ThemeContext";
+import { ThemeProvider } from "./components/ThemeContext";
+import { useTheme } from "./components/useTheme";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
