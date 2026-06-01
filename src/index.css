@@ -11,6 +11,10 @@ html.light {
   color-scheme: light;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
@@ -20,30 +24,12 @@ body {
 }
 
 html.dark body {
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(255, 255, 255, 0.08),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(148, 163, 184, 0.1),
-      transparent 30%
-    ),
-    #050505;
+  background: linear-gradient(135deg, #050505 0%, #0f1115 52%, #050505 100%);
   color: #f5f5f5;
 }
 
 html.light body {
-  background:
-    radial-gradient(circle at top left, rgba(0, 0, 0, 0.06), transparent 32%),
-    radial-gradient(
-      circle at bottom right,
-      rgba(0, 0, 0, 0.04),
-      transparent 30%
-    ),
-    #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f8fb 52%, #ffffff 100%);
   color: #111111;
 }
 
@@ -80,7 +66,7 @@ textarea {
   }
 
   .section-kicker {
-    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-white/70;
+    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)];
   }
 
   html.light .section-kicker {
@@ -104,15 +90,23 @@ textarea {
   }
 
   .surface-panel {
-    @apply rounded-[2rem] border border-white/10 bg-white/6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md;
+    @apply rounded-[2rem] border border-white/10 bg-white/6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-300;
   }
 
   html.light .surface-panel {
     @apply border-black/10 bg-white/70 shadow-[0_20px_80px_rgba(0,0,0,0.1)];
   }
 
+  .interactive-panel {
+    @apply hover:-translate-y-1 hover:border-white/18 hover:bg-white/8 hover:shadow-[0_28px_90px_rgba(0,0,0,0.42)];
+  }
+
+  html.light .interactive-panel {
+    @apply hover:border-black/15 hover:bg-white hover:shadow-[0_24px_70px_rgba(15,23,42,0.12)];
+  }
+
   .ghost-panel {
-    @apply rounded-[1.5rem] border border-white/10 bg-black/35;
+    @apply rounded-[1.5rem] border border-white/10 bg-black/35 transition duration-300;
   }
 
   html.light .ghost-panel {
@@ -120,7 +114,7 @@ textarea {
   }
 
   .tag {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-sm text-white/70;
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-sm text-white/70 transition duration-200;
   }
 
   html.light .tag {
@@ -128,7 +122,7 @@ textarea {
   }
 
   .primary-btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white px-5 py-3 text-sm font-semibold text-black shadow-[0_10px_40px_rgba(255,255,255,0.15)] hover:-translate-y-0.5 hover:bg-neutral-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white px-5 py-3 text-sm font-semibold text-black shadow-[0_10px_40px_rgba(255,255,255,0.15)] hover:-translate-y-0.5 hover:bg-neutral-200 active:translate-y-0;
   }
 
   html.light .primary-btn {
@@ -136,7 +130,7 @@ textarea {
   }
 
   .secondary-btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/14 bg-white/6 px-5 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:bg-white/10;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/14 bg-white/6 px-5 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0;
   }
 
   html.light .secondary-btn {
@@ -173,5 +167,20 @@ textarea {
 
   html.light .Toastify__close-button {
     @apply text-black/70;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

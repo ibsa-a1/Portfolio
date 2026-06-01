@@ -16,10 +16,7 @@ function AppContent() {
       id="top"
       className="relative min-h-screen overflow-hidden bg-slate-50 text-slate-950 transition-colors duration-300 dark:bg-[#050505] dark:text-white"
     >
-      <div className="pointer-events-none absolute inset-10 opacity-70">
-        <div className="absolute left-0 top-0 h-[34rem] w-[34rem] rounded-full bg-slate-200/50 blur-[180px] dark:bg-white/10" />
-        <div className="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-slate-300/10 blur-[180px] dark:bg-slate-400/10" />
-      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60 dark:bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)]" />
 
       <ToastContainer
         position="top-right"

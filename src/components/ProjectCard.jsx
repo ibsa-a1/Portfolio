@@ -1,6 +1,7 @@
 import React from "react";
 import {
   ArrowUpRight,
+  CheckCircle2,
   Github,
   Layers3,
   LayoutTemplate,
@@ -23,7 +24,7 @@ const categoryMeta = {
   },
 };
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, index = 0 }) {
   const meta = categoryMeta[project.category];
   const CategoryIcon = meta.icon;
 
@@ -31,18 +32,19 @@ export default function ProjectCard({ project }) {
     <Motion.article
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -6 }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.45 }}
-      className="surface-panel overflow-hidden"
+      transition={{ duration: 0.45, delay: Math.min(index * 0.025, 0.16) }}
+      className="surface-panel group overflow-hidden"
     >
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
-          className="h-56 w-full object-cover"
+          className="h-56 w-full object-cover transition duration-700 group-hover:scale-105"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent transition duration-300 group-hover:via-black/10" />
         <div className="absolute left-5 top-5 flex flex-wrap gap-2">
           <span className="tag border-slate-200/15 bg-slate-100/60 text-slate-950 transition-colors duration-200 dark:border-white/15 dark:bg-black/45 dark:text-white">
             <CategoryIcon className="mr-2 h-4 w-4" />
@@ -54,8 +56,8 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div className="p-6">
-        <p className="text-sm uppercase tracking-[0.25em] text-slate-600/80 dark:text-white/40">
+      <div className="p-6 sm:p-7">
+        <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-600/80 dark:text-white/40">
           {project.summary}
         </p>
         <h3 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white">
@@ -77,9 +79,10 @@ export default function ProjectCard({ project }) {
           {project.highlights.map((point) => (
             <div
               key={point}
-              className="rounded-2xl border border-slate-200/8 bg-slate-100/25 px-4 py-3 text-sm leading-6 text-slate-700/70 transition-colors duration-200 dark:border-white/8 dark:bg-black/25 dark:text-white/65"
+              className="flex gap-3 rounded-2xl border border-slate-200/8 bg-slate-100/25 px-4 py-3 text-sm leading-6 text-slate-700/70 transition-colors duration-200 group-hover:border-slate-300/30 dark:border-white/8 dark:bg-black/25 dark:text-white/65 dark:group-hover:border-white/14"
             >
-              {point}
+              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-slate-950/70 dark:text-white/70" />
+              <span>{point}</span>
             </div>
           ))}
         </div>
@@ -113,7 +116,7 @@ export default function ProjectCard({ project }) {
               <ArrowUpRight className="h-4 w-4" />
             </a>
           ) : (
-            <span className="primary-btn cursor-not-allowed opacity-55">
+            <span className="secondary-btn cursor-not-allowed opacity-55">
               No live demo
             </span>
           )}

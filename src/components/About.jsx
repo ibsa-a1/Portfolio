@@ -50,29 +50,31 @@ const About = () => {
               </h2>
               <div className="section-copy mt-6 space-y-5">
                 <p>
-                  I originally built portfolio sites, landing pages, and
-                  UI-heavy React projects. That frontend foundation still shapes
-                  the way I work today: I care about clarity, usability, and
-                  visual polish.
+                  I began by building portfolio sites, landing pages, and
+                  UI-heavy React projects. That foundation still shapes how I
+                  work: I care about clarity, usability, responsiveness, and the
+                  small details that make an interface feel finished.
                 </p>
                 <p>
-                  Now I build across the full stack with MERN, creating React
-                  clients, Express APIs, MongoDB-backed features, authentication
-                  flows, and dashboards that connect smoothly from database to
-                  UI.
+                  I now build across the MERN stack, connecting React clients
+                  with Express APIs, MongoDB-backed features, authentication
+                  flows, dashboards, and admin tools that work cleanly from
+                  database to UI.
                 </p>
                 <p>
-                  I&apos;m especially motivated by projects where good product
-                  thinking matters just as much as code quality, whether that
-                  means shipping admin tools, customer-facing platforms, or
-                  scalable service layers behind the scenes.
+                  I&apos;m strongest in projects where product thinking and code
+                  quality meet: turning a practical need into an interface,
+                  workflow, or service layer that people can actually use.
                 </p>
               </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {expertiseAreas.map((item) => (
-                <div key={item.title} className="surface-panel p-5">
+                <div
+                  key={item.title}
+                  className="surface-panel interactive-panel p-5"
+                >
                   <h3 className="text-lg font-semibold text-slate-950 dark:text-white">
                     {item.title}
                   </h3>
@@ -83,7 +85,7 @@ const About = () => {
               ))}
             </div>
 
-            <div className="surface-panel p-6">
+            <div className="surface-panel interactive-panel p-6">
               <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/45">
                 How I Can Help
               </p>

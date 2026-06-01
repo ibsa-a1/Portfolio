@@ -45,38 +45,38 @@ export const navLinks = [
 export const heroStats = [
   { value: "MERN", label: "Core stack" },
   { value: "12+", label: "Projects shipped" },
-  { value: "API", label: "Backend focus" },
-  { value: "UI", label: "Frontend polish" },
+  { value: "REST", label: "API design" },
+  { value: "UI/UX", label: "Frontend craft" },
 ];
 
 export const expertiseAreas = [
   {
-    title: "Frontend Systems",
+    title: "Frontend Engineering",
     description:
-      "Responsive React interfaces, clean component architecture, motion, and polished UX with Tailwind CSS.",
+      "Responsive React interfaces with clean component architecture, smooth motion, and polished UX using Tailwind CSS.",
   },
   {
     title: "Backend Services",
     description:
-      "Node.js and Express APIs with authentication, role-based access, validation, and maintainable server structure.",
+      "RESTful APIs with Node.js and Express, featuring secure authentication, role-based access, input validation, and maintainable architecture.",
   },
   {
     title: "Database Design",
     description:
-      "MongoDB schema design, relational thinking for data flow, and backend logic shaped around real product needs.",
+      "MongoDB schema design with relational thinking, optimized data flow, and backend logic built around real product requirements.",
   },
   {
     title: "Fullstack Delivery",
     description:
-      "Connecting client and server, building dashboards, managing state, and shipping complete MERN products end-to-end.",
+      "End-to-end MERN products connecting React clients to Express APIs, with state management, dashboards, and production deployment.",
   },
 ];
 
 export const serviceHighlights = [
-  "Build responsive MERN applications from idea to deployment",
-  "Design REST APIs for auth, dashboards, admin flows, and CRUD-heavy products",
-  "Turn rough ideas into production-ready interfaces with clear UX structure",
-  "Collaborate quickly, communicate clearly, and iterate fast on feedback",
+  "Build responsive MERN applications from concept to deployment",
+  "Design REST APIs for authentication, dashboards, admin tools, and data-heavy applications",
+  "Transform rough concepts into production-ready interfaces with clear UX structure",
+  "Collaborate closely, communicate clearly, and iterate quickly based on feedback",
 ];
 
 export const projectCategories = [
@@ -85,21 +85,21 @@ export const projectCategories = [
     label: "Frontend",
     eyebrow: "UI Engineering",
     description:
-      "Real frontend work focused on interface quality, responsiveness, animation, and clean user experience.",
+      "Polished interfaces built with React, focused on responsive design, smooth interactions, and clean user experience.",
   },
   {
     id: "backend",
     label: "Backend",
     eyebrow: "Server-Side Builds",
     description:
-      "Production-ready REST APIs covering auth, QR systems, real-time events, and full order lifecycles — built with Node.js, Express, and MongoDB.",
+      "Production-ready REST APIs handling authentication, real-time events, QR systems, and full order lifecycles with Node.js, Express, and MongoDB.",
   },
   {
     id: "fullstack",
     label: "Fullstack",
     eyebrow: "MERN Products",
     description:
-      "End-to-end MERN applications shipped with real users — from hackathon tools to Telegram-powered storefronts and smart attendance platforms.",
+      "End-to-end MERN applications used by real users, from hackathon prototypes to Telegram storefronts and smart attendance systems.",
   },
 ];
 
@@ -108,9 +108,9 @@ export const projectsData = [
     id: 1,
     category: "frontend",
     title: "My-Estate",
-    summary: "Real estate landing experience with motion-rich UI.",
+    summary: "Real estate landing page with motion-rich, conversion-focused UI.",
     description:
-      "A polished property landing page built for high-conversion presentation. The project focuses on responsive layout, strong hero storytelling, interactive sections, and smooth user flow from first impression to contact.",
+      "A polished property landing page built for high-conversion presentation. The project focuses on responsive layout, strong hero storytelling, interactive sections, and a smooth user flow from first impression to contact.",
     image: project_img_1,
     stack: ["React", "Tailwind CSS", "Motion", "Toastify"],
     highlights: [
@@ -128,7 +128,7 @@ export const projectsData = [
     title: "Online Code Editor",
     summary: "Interactive browser editor with multi-language support.",
     description:
-      "A frontend-heavy coding environment designed for quick experimentation. It balances usability and dynamic state updates while letting users work with multiple languages inside a clean interface.",
+      "A browser-based coding environment for quick experimentation. Supports multiple languages with real-time execution and a clean, uncluttered interface.",
     image: project_img_2,
     stack: ["React", "Chakra UI", "Piston API", "Toastify"],
     highlights: [
@@ -146,7 +146,7 @@ export const projectsData = [
     title: "Movie App",
     summary: "Media discovery UI with search, favorites, and trailers.",
     description:
-      "A content-rich movie experience with API-driven rendering, searchable discovery, favorites persistence, and clean card-based browsing across devices.",
+      "A movie discovery app with API-driven content, search, favorites, and clean card-based browsing across all devices.",
     image: project_img_3,
     stack: ["React", "CSS", "TMDB API", "Local Storage"],
     highlights: [
@@ -164,7 +164,7 @@ export const projectsData = [
     title: "Addis Ababa Centered Map",
     summary: "Location-focused map interface built for Ethiopian users.",
     description:
-      "A map application centered on Addis Ababa with a practical, location-aware interface. It demonstrates handling maps, search interactions, and context-specific UI for a local user base.",
+      "A location-aware map centered on Addis Ababa, built with practical search interactions and context-specific UX for local users.",
     image: project_img_4,
     stack: ["React", "Leaflet", "OpenStreetMap", "CSS"],
     highlights: [
@@ -182,7 +182,7 @@ export const projectsData = [
     title: "E-commerce Backend",
     summary: "REST API for products, cart, and orders — built for GDG.",
     description:
-      "A learning-focused e-commerce backend built with Node.js, Express, and MongoDB Atlas following MVC architecture. Covers full product CRUD with filtering, cart management with stock validation, and order creation with automatic stock reduction.",
+      "A production-style e-commerce backend built with Node.js, Express, and MongoDB Atlas using MVC architecture. Features product CRUD with filtering, cart management with stock validation, and automated order processing with inventory updates.",
     image: backendProjectImages.ecommerce,
     stack: ["Node.js", "Express", "MongoDB Atlas", "MVC"],
     highlights: [
@@ -200,7 +200,7 @@ export const projectsData = [
     title: "Dynamic QR Attendance API",
     summary: "Secure attendance backend with time-limited QR and device binding.",
     description:
-      "The server layer of a MERN attendance system where teachers generate short-lived QR codes and students scan to mark presence. Device binding prevents credential sharing — each scan is tied to the student's device fingerprint for integrity.",
+      "Server layer for a MERN attendance system where teachers generate session-based QR codes and students scan to mark presence. Device fingerprinting prevents proxy attendance by binding each scan to a verified device.",
     image: attendQR_img,
     stack: ["Node.js", "Express", "MongoDB", "JWT", "QR"],
     highlights: [
@@ -218,7 +218,7 @@ export const projectsData = [
     title: "University Restaurant API",
     summary: "Full-featured ordering backend with student ID verification.",
     description:
-      "A Node.js/Express REST API for a university food ordering system. Students register with their Student ID, must be verified by an admin before ordering, and can browse the menu, manage their cart with per-item instructions, place orders, save favorites, and leave post-order reviews.",
+      "A Node.js/Express REST API powering a university food ordering system. Students register and verify their ID before browsing menus, managing carts with custom instructions, placing orders, saving favorites, and leaving reviews.",
     image: backendProjectImages.restaurant,
     stack: ["Node.js", "Express", "MongoDB", "JWT", "Refresh Tokens"],
     highlights: [
@@ -236,7 +236,7 @@ export const projectsData = [
     title: "FuelPass Backend",
     summary: "AI-powered QR fuel distribution API — GDG Hackathon.",
     description:
-      "The server-side engine of FuelPass, a hackathon-built fuel distribution system. Handles QR code issuance per vehicle, AI-assisted quota management, real-time socket events for fuel station dashboards, and full CRUD across vehicle registrations, quotas, and transactions.",
+      "Server-side engine for FuelPass, a hackathon fuel distribution system. Manages vehicle QR codes, AI-assisted quota tracking, real-time Socket.IO updates for station dashboards, and full CRUD for registrations and transactions.",
     image: fuelPass_img,
     stack: ["Node.js", "Express", "MongoDB", "Socket.IO", "AI"],
     highlights: [
@@ -254,7 +254,7 @@ export const projectsData = [
     title: "FuelPass",
     summary: "AI-powered QR fuel distribution platform — GDG Hackathon.",
     description:
-      "A fullstack MERN system built during a GDG hackathon to modernize government fuel distribution. Citizens register vehicles, receive unique QR codes, and fuel stations scan them for real-time allocation. AI logic prevents quota abuse and surfaces anomalies across the live dashboard.",
+      "A fullstack MERN system built at a GDG hackathon to modernize fuel distribution. Citizens register vehicles and receive QR codes for real-time allocation at fuel stations. AI logic prevents quota abuse and surfaces anomalies on a live dashboard.",
     image: fuelPass_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "AI"],
     highlights: [
@@ -272,7 +272,7 @@ export const projectsData = [
     title: "Dynamic QR Attendance System",
     summary: "MERN attendance platform with time-limited QR and device binding.",
     description:
-      "A secure fullstack web application where teachers generate time-limited QR codes for each class session and students mark attendance by scanning. Device binding ensures every scan is tied to a verified physical device — eliminating proxy attendance without any extra hardware.",
+      "A secure fullstack application where teachers generate session-based QR codes and students mark attendance by scanning. Device binding ties every scan to a verified physical device, eliminating proxy attendance without extra hardware.",
     image: attendQR_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "QR"],
     highlights: [
@@ -290,7 +290,7 @@ export const projectsData = [
     title: "ShopSync",
     summary: "Telegram-powered storefront — post a product, it goes live instantly.",
     description:
-      "A fullstack MERN ecommerce platform that uses a Telegram channel as its CMS. Shop owners post products directly to their Telegram channel and a bot handles syncing to the live storefront automatically — no admin panel needed. Built for small businesses that already live inside Telegram.",
+      "A MERN ecommerce platform using Telegram as its CMS. Shop owners post products to their Telegram channel, and a bot automatically syncs them to the live storefront — no admin panel required. Built for small businesses already using Telegram.",
     image: shopSync_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API"],
     highlights: [

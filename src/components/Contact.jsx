@@ -81,15 +81,15 @@ const Contact = () => {
                 </span>
               </h2>
               <p className="section-copy mt-6">
-                I&apos;m available for freelance work, internships, and product
-                collaborations where strong frontend quality and fullstack
-                delivery both matter.
+                I&apos;m open to freelance work, internships, and collaborations
+                where thoughtful UI, dependable backend work, and clear
+                communication matter.
               </p>
             </div>
 
             <div className="grid gap-4">
               {contactCards.map(({ icon, label, value, href }) => (
-                <div key={label} className="surface-panel p-5">
+                <div key={label} className="surface-panel interactive-panel p-5">
                   <div className="flex items-start gap-4">
                     <div className="rounded-2xl border border-slate-200/10 bg-slate-100/8 p-3 transition-colors duration-200 dark:border-white/10 dark:bg-white/8">
                       {createElement(icon, {
@@ -118,7 +118,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="surface-panel p-6">
+            <div className="surface-panel interactive-panel p-6">
               <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
                 Online
               </p>
@@ -149,7 +149,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="surface-panel p-6 sm:p-8">
+          <div className="surface-panel interactive-panel p-6 sm:p-8">
             <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
               Send a Message
             </p>
@@ -157,8 +157,8 @@ const Contact = () => {
               Tell me what you&apos;re building.
             </h3>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-700/70 dark:text-white/60">
-              Share the product idea, business goal, or feature you need help
-              with. I&apos;ll reply as soon as I can.
+              Share the product idea, workflow, or feature you need help with.
+              I&apos;ll reply with a clear next step as soon as I can.
             </p>
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">

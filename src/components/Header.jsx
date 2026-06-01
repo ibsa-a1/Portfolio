@@ -32,18 +32,18 @@ const stackIcons = [
 const focusCards = [
   {
     icon: Braces,
-    title: "Frontend polish",
-    text: "React interfaces with clear UX, responsive layouts, and strong visual structure.",
+    title: "Product-minded UI",
+    text: "React interfaces that stay clear, responsive, and easy to use across devices.",
   },
   {
     icon: Server,
-    title: "Backend logic",
-    text: "Express APIs, authentication, validation, and scalable server-side organization.",
+    title: "Reliable APIs",
+    text: "Express services with authentication, validation, and practical backend structure.",
   },
   {
     icon: Database,
-    title: "Data flow",
-    text: "MongoDB-backed features designed around real product workflows and clean integration.",
+    title: "Connected data",
+    text: "MongoDB-backed workflows designed around how the product actually operates.",
   },
 ];
 
@@ -62,16 +62,16 @@ const Header = () => {
           >
             <span className="section-kicker">MERN Fullstack Developer</span>
             <h1 className="section-title">
-              Building modern products across{" "}
+              I build usable web products across{" "}
               <span className="display-font text-slate-900/80 dark:text-white/80">
-                frontend, backend, and fullstack systems.
+                React interfaces, APIs, and fullstack systems.
               </span>
             </h1>
             <p className="section-copy mt-6">
-              I started as a frontend developer and now build complete MERN
-              experiences, from polished React interfaces to reliable Node,
-              Express, and MongoDB backends. I care about how products feel, how
-              they scale, and how cleanly everything connects.
+              I started with frontend work and grew into building complete MERN
+              applications. Today I connect polished React experiences with
+              Node, Express, and MongoDB backends, with a focus on clear user
+              flows, dependable APIs, and practical product delivery.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -116,7 +116,10 @@ const Header = () => {
 
             <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {heroStats.map((item) => (
-                <div key={item.label} className="ghost-panel p-4">
+                <div
+                  key={item.label}
+                  className="ghost-panel p-4 hover:-translate-y-1 hover:bg-slate-100/60 dark:hover:bg-white/8"
+                >
                   <p className="text-2xl font-semibold text-slate-950 dark:text-white">
                     {item.value}
                   </p>
@@ -132,7 +135,7 @@ const Header = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15 }}
-            className="surface-panel relative overflow-hidden p-6 sm:p-8"
+            className="surface-panel interactive-panel relative overflow-hidden p-6 sm:p-8"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.12),_transparent_40%)]" />
             <div className="relative">
@@ -148,7 +151,7 @@ const Header = () => {
                 {focusCards.map(({ icon, title, text }) => (
                   <div
                     key={title}
-                    className="ghost-panel flex items-start gap-4 p-4"
+                    className="ghost-panel flex items-start gap-4 p-4 hover:-translate-y-1 hover:bg-slate-100/60 dark:hover:bg-white/8"
                   >
                     <div className="rounded-2xl border border-slate-200/10 bg-slate-100/8 p-3 transition-colors duration-200 dark:border-white/10 dark:bg-white/8">
                       {createElement(icon, {
@@ -175,7 +178,7 @@ const Header = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="surface-panel mt-12 p-6 sm:p-8"
+          className="surface-panel interactive-panel mt-12 p-6 sm:p-8"
         >
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
@@ -183,7 +186,7 @@ const Header = () => {
                 Current Stack
               </p>
               <h2 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">
-                Stronger on the frontend, now shipping complete MERN workflows.
+                Frontend craft backed by real fullstack implementation.
               </h2>
             </div>
 

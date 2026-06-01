@@ -12,8 +12,8 @@ const Footer = () => {
             Ibsa Abera
           </p>
           <p className="mt-2 text-sm text-slate-700/70 dark:text-white/55">
-            Fullstack developer building MERN products with strong frontend
-            craft.
+            MERN developer building polished interfaces and practical backend
+            systems.
           </p>
         </div>
 
