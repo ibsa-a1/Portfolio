@@ -8,6 +8,16 @@ import project_img_1 from "./project_img_1.jpg";
 import project_img_2 from "./project_img_2.jpg";
 import project_img_3 from "./project_img_3.jpg";
 import project_img_4 from "./project_img_4.jpg";
+import fuelPass_img from "./FuelPass.jpg";
+import shopSync_img from "./ShopSync.jpg";
+import attendQR_img from "./AttendQR.jpg";
+
+const backendProjectImages = {
+  ecommerce:
+    "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80",
+  restaurant:
+    "https://images.unsplash.com/photo-1760888549280-4aef010720bd?auto=format&fit=crop&w=1400&q=80",
+};
 
 export const assets = {
   profile_img,
@@ -20,6 +30,9 @@ export const assets = {
   project_img_2,
   project_img_3,
   project_img_4,
+  fuelPass_img,
+  shopSync_img,
+  attendQR_img,
 };
 
 export const navLinks = [
@@ -170,7 +183,7 @@ export const projectsData = [
     summary: "REST API for products, cart, and orders — built for GDG.",
     description:
       "A learning-focused e-commerce backend built with Node.js, Express, and MongoDB Atlas following MVC architecture. Covers full product CRUD with filtering, cart management with stock validation, and order creation with automatic stock reduction.",
-    image: project_img_1,
+    image: backendProjectImages.ecommerce,
     stack: ["Node.js", "Express", "MongoDB Atlas", "MVC"],
     highlights: [
       "Product CRUD with category and price-range filtering",
@@ -188,7 +201,7 @@ export const projectsData = [
     summary: "Secure attendance backend with time-limited QR and device binding.",
     description:
       "The server layer of a MERN attendance system where teachers generate short-lived QR codes and students scan to mark presence. Device binding prevents credential sharing — each scan is tied to the student's device fingerprint for integrity.",
-    image: project_img_2,
+    image: attendQR_img,
     stack: ["Node.js", "Express", "MongoDB", "JWT", "QR"],
     highlights: [
       "Time-limited QR code generation per session",
@@ -206,7 +219,7 @@ export const projectsData = [
     summary: "Full-featured ordering backend with student ID verification.",
     description:
       "A Node.js/Express REST API for a university food ordering system. Students register with their Student ID, must be verified by an admin before ordering, and can browse the menu, manage their cart with per-item instructions, place orders, save favorites, and leave post-order reviews.",
-    image: project_img_3,
+    image: backendProjectImages.restaurant,
     stack: ["Node.js", "Express", "MongoDB", "JWT", "Refresh Tokens"],
     highlights: [
       "JWT access + refresh token auth with Student ID format validation",
@@ -224,7 +237,7 @@ export const projectsData = [
     summary: "AI-powered QR fuel distribution API — GDG Hackathon.",
     description:
       "The server-side engine of FuelPass, a hackathon-built fuel distribution system. Handles QR code issuance per vehicle, AI-assisted quota management, real-time socket events for fuel station dashboards, and full CRUD across vehicle registrations, quotas, and transactions.",
-    image: project_img_4,
+    image: fuelPass_img,
     stack: ["Node.js", "Express", "MongoDB", "Socket.IO", "AI"],
     highlights: [
       "Dynamic QR generation tied to vehicle and quota records",
@@ -242,7 +255,7 @@ export const projectsData = [
     summary: "AI-powered QR fuel distribution platform — GDG Hackathon.",
     description:
       "A fullstack MERN system built during a GDG hackathon to modernize government fuel distribution. Citizens register vehicles, receive unique QR codes, and fuel stations scan them for real-time allocation. AI logic prevents quota abuse and surfaces anomalies across the live dashboard.",
-    image: project_img_4,
+    image: fuelPass_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "AI"],
     highlights: [
       "QR-based vehicle identity and fuel quota enforcement",
@@ -260,7 +273,7 @@ export const projectsData = [
     summary: "MERN attendance platform with time-limited QR and device binding.",
     description:
       "A secure fullstack web application where teachers generate time-limited QR codes for each class session and students mark attendance by scanning. Device binding ensures every scan is tied to a verified physical device — eliminating proxy attendance without any extra hardware.",
-    image: project_img_2,
+    image: attendQR_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "QR"],
     highlights: [
       "Time-limited QR codes regenerated per session by teachers",
@@ -278,7 +291,7 @@ export const projectsData = [
     summary: "Telegram-powered storefront — post a product, it goes live instantly.",
     description:
       "A fullstack MERN ecommerce platform that uses a Telegram channel as its CMS. Shop owners post products directly to their Telegram channel and a bot handles syncing to the live storefront automatically — no admin panel needed. Built for small businesses that already live inside Telegram.",
-    image: project_img_1,
+    image: shopSync_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API"],
     highlights: [
       "Telegram channel acts as the product management backend",
