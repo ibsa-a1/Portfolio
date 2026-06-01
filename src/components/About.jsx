@@ -6,6 +6,8 @@ import { assets, expertiseAreas, serviceHighlights } from "../assets/assets";
 const About = () => {
   return (
     <section id="about" className="py-24 sm:py-28">
+      <div className="section-divider mb-24" />
+
       <div className="section-shell">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Motion.div
@@ -52,7 +54,7 @@ const About = () => {
                 <p>
                   I began by building portfolio sites, landing pages, and
                   UI-heavy React projects. That foundation still shapes how I
-                  work: I care about clarity, usability, responsiveness, and the
+                  work — I care about clarity, usability, responsiveness, and the
                   small details that make an interface feel finished.
                 </p>
                 <p>
@@ -70,30 +72,34 @@ const About = () => {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              {expertiseAreas.map((item) => (
-                <div
+              {expertiseAreas.map((item, i) => (
+                <Motion.div
                   key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: i * 0.08 }}
                   className="surface-panel interactive-panel p-5"
                 >
                   <h3 className="text-lg font-semibold text-slate-950 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-700/70 dark:text-white/60">
+                  <p className="mt-3 text-sm leading-7 text-slate-700/75 dark:text-white/65">
                     {item.description}
                   </p>
-                </div>
+                </Motion.div>
               ))}
             </div>
 
             <div className="surface-panel interactive-panel p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/45">
+              <h3 className="text-sm font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
                 How I Can Help
-              </p>
+              </h3>
               <div className="mt-5 grid gap-4">
                 {serviceHighlights.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-slate-950 dark:text-white" />
-                    <p className="text-sm leading-7 text-slate-700/70 dark:text-white/65">
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-600/80 dark:text-emerald-400/70" />
+                    <p className="text-sm leading-7 text-slate-700/80 dark:text-white/70">
                       {item}
                     </p>
                   </div>

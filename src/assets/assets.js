@@ -43,10 +43,10 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { value: "MERN", label: "Core stack" },
-  { value: "12+", label: "Projects shipped" },
-  { value: "REST", label: "API design" },
-  { value: "UI/UX", label: "Frontend craft" },
+  { value: "11+", label: "Projects built & shipped" },
+  { value: "MERN", label: "Primary stack" },
+  { value: "3", label: "Live fullstack products" },
+  { value: "4", label: "Backend APIs designed" },
 ];
 
 export const expertiseAreas = [
@@ -73,10 +73,10 @@ export const expertiseAreas = [
 ];
 
 export const serviceHighlights = [
-  "Build responsive MERN applications from concept to deployment",
-  "Design REST APIs for authentication, dashboards, admin tools, and data-heavy applications",
-  "Transform rough concepts into production-ready interfaces with clear UX structure",
-  "Collaborate closely, communicate clearly, and iterate quickly based on feedback",
+  "Build and deploy complete MERN applications — from database schema to polished UI",
+  "Design secure REST APIs with JWT auth, role-based access, and real-time updates",
+  "Turn rough ideas into clean, production-ready interfaces people actually enjoy using",
+  "Collaborate closely, communicate clearly, and ship iteratively based on real feedback",
 ];
 
 export const projectCategories = [
@@ -85,21 +85,21 @@ export const projectCategories = [
     label: "Frontend",
     eyebrow: "UI Engineering",
     description:
-      "Polished interfaces built with React, focused on responsive design, smooth interactions, and clean user experience.",
+      "React interfaces built for real use — responsive, interactive, and designed to feel finished.",
   },
   {
     id: "backend",
     label: "Backend",
-    eyebrow: "Server-Side Builds",
+    eyebrow: "API & Server Builds",
     description:
-      "Production-ready REST APIs handling authentication, real-time events, QR systems, and full order lifecycles with Node.js, Express, and MongoDB.",
+      "Node.js + Express APIs powering authentication, real-time events, QR systems, and complete order lifecycles.",
   },
   {
     id: "fullstack",
     label: "Fullstack",
-    eyebrow: "MERN Products",
+    eyebrow: "Complete MERN Products",
     description:
-      "End-to-end MERN applications used by real users, from hackathon prototypes to Telegram storefronts and smart attendance systems.",
+      "End-to-end applications used by real people — from hackathon builds to Telegram-powered storefronts.",
   },
 ];
 
@@ -108,33 +108,34 @@ export const projectsData = [
     id: 1,
     category: "frontend",
     title: "My-Estate",
-    summary: "Real estate landing page with motion-rich, conversion-focused UI.",
+    summary: "Conversion-focused real estate landing page",
     description:
-      "A polished property landing page built for high-conversion presentation. The project focuses on responsive layout, strong hero storytelling, interactive sections, and a smooth user flow from first impression to contact.",
+      "A polished property landing page built for high-conversion presentation. Responsive layout, strong hero storytelling, and a smooth flow from first impression to contact — designed to feel like a real product, not a tutorial project.",
     image: project_img_1,
     stack: ["React", "Tailwind CSS", "Motion", "Toastify"],
     highlights: [
-      "Responsive property-first marketing UI",
-      "Smooth transitions and animated content flow",
-      "Clean conversion path with interactive contact form",
+      "Responsive property-first marketing UI with mobile-first layout",
+      "Smooth page transitions and animated content reveals",
+      "Complete conversion path: hero → features → contact form",
     ],
     code: "https://github.com/ibsa-a1/My-Estate.git",
     demo: "https://my-estate-black.vercel.app/",
     status: "Live project",
+    featured: true,
   },
   {
     id: 2,
     category: "frontend",
     title: "Online Code Editor",
-    summary: "Interactive browser editor with multi-language support.",
+    summary: "Browser-based multi-language coding environment",
     description:
-      "A browser-based coding environment for quick experimentation. Supports multiple languages with real-time execution and a clean, uncluttered interface.",
+      "A browser-based coding environment for quick experimentation. Supports multiple languages with real-time execution via the Piston API and a clean, focused interface.",
     image: project_img_2,
     stack: ["React", "Chakra UI", "Piston API", "Toastify"],
     highlights: [
-      "Editor experience optimized for clarity and speed",
-      "Multi-language snippets and execution flow",
-      "Error states surfaced through friendly UI feedback",
+      "Clean editor UX optimized for focus and speed",
+      "Multi-language support with real-time code execution",
+      "Clear error feedback and execution state management",
     ],
     code: "https://github.com/ibsa-a1/Online-Code-Editor.git",
     demo: "https://onlinecoder.vercel.app/",
@@ -144,15 +145,15 @@ export const projectsData = [
     id: 3,
     category: "frontend",
     title: "Movie App",
-    summary: "Media discovery UI with search, favorites, and trailers.",
+    summary: "API-driven media discovery interface",
     description:
-      "A movie discovery app with API-driven content, search, favorites, and clean card-based browsing across all devices.",
+      "A movie discovery app powered by the TMDB API with search, favorites, and clean card-based browsing. Persistent local storage keeps favorites between sessions.",
     image: project_img_3,
     stack: ["React", "CSS", "TMDB API", "Local Storage"],
     highlights: [
-      "Fast search and dynamic movie browsing",
-      "Favorites saved locally for returning users",
-      "Trailer and metadata flows designed for engagement",
+      "Instant search with dynamic filtering across genres",
+      "Persistent favorites using localStorage for returning users",
+      "Trailer integration and rich metadata display",
     ],
     code: "https://github.com/ibsa-a1/React-Movie-App.git",
     demo: "https://ibsa-movie-app.vercel.app/",
@@ -162,14 +163,14 @@ export const projectsData = [
     id: 4,
     category: "frontend",
     title: "Addis Ababa Centered Map",
-    summary: "Location-focused map interface built for Ethiopian users.",
+    summary: "Location-aware map interface for local users",
     description:
-      "A location-aware map centered on Addis Ababa, built with practical search interactions and context-specific UX for local users.",
+      "An interactive map centered on Addis Ababa with practical search and place discovery UX, built with Leaflet and OpenStreetMap for context-specific local use.",
     image: project_img_4,
     stack: ["React", "Leaflet", "OpenStreetMap", "CSS"],
     highlights: [
-      "Place-focused UI tailored for Addis Ababa",
-      "Map interactions with fast visual feedback",
+      "Place-focused UI with Addis Ababa-specific context",
+      "Interactive map with responsive search and fast feedback",
       "Foundation for future geolocation-driven products",
     ],
     code: "https://github.com/ibsa-a1/Addis-Ababa-Centered-React-Leaflet.git",
@@ -180,19 +181,20 @@ export const projectsData = [
     id: 5,
     category: "backend",
     title: "E-commerce Backend",
-    summary: "REST API for products, cart, and orders — built for GDG.",
+    summary: "Complete REST API for products, cart & orders",
     description:
-      "A production-style e-commerce backend built with Node.js, Express, and MongoDB Atlas using MVC architecture. Features product CRUD with filtering, cart management with stock validation, and automated order processing with inventory updates.",
+      "A production-style e-commerce backend using MVC architecture. Features product CRUD with filtering, cart management with stock validation, and automated order processing with inventory updates — built for a GDG project.",
     image: backendProjectImages.ecommerce,
     stack: ["Node.js", "Express", "MongoDB Atlas", "MVC"],
     highlights: [
       "Product CRUD with category and price-range filtering",
       "Cart with per-item stock validation and quantity control",
-      "Order flow that calculates total, reduces stock, and clears cart",
+      "Automated order flow: calculates total → reduces stock → clears cart",
     ],
     code: "https://github.com/ibsa-a1/GDG-Mini-Project-Ibsa-Abera.git",
     demo: null,
     status: "Backend project",
+    featured: true,
   },
   {
     id: 6,
@@ -252,7 +254,7 @@ export const projectsData = [
     id: 9,
     category: "fullstack",
     title: "FuelPass",
-    summary: "AI-powered QR fuel distribution platform — GDG Hackathon.",
+    summary: "AI-powered QR fuel distribution platform",
     description:
       "A fullstack MERN system built at a GDG hackathon to modernize fuel distribution. Citizens register vehicles and receive QR codes for real-time allocation at fuel stations. AI logic prevents quota abuse and surfaces anomalies on a live dashboard.",
     image: fuelPass_img,
@@ -260,19 +262,20 @@ export const projectsData = [
     highlights: [
       "QR-based vehicle identity and fuel quota enforcement",
       "Live station dashboard with Socket.IO real-time updates",
-      "AI-assisted quota fraud detection built under hackathon time pressure",
+      "AI-assisted fraud detection built under hackathon time pressure",
     ],
     code: "https://github.com/G1-Hackathon-GDG",
     demo: "https://fuelpass-delta.vercel.app/",
     status: "Live · Hackathon project",
+    featured: true,
   },
   {
     id: 10,
     category: "fullstack",
     title: "Dynamic QR Attendance System",
-    summary: "MERN attendance platform with time-limited QR and device binding.",
+    summary: "Secure attendance platform with device-bound QR codes",
     description:
-      "A secure fullstack application where teachers generate session-based QR codes and students mark attendance by scanning. Device binding ties every scan to a verified physical device, eliminating proxy attendance without extra hardware.",
+      "A secure fullstack application where teachers generate session-based QR codes and students mark attendance by scanning. Device binding ties every scan to a verified physical device — eliminating proxy attendance without extra hardware.",
     image: attendQR_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "QR"],
     highlights: [
@@ -283,23 +286,25 @@ export const projectsData = [
     code: "https://github.com/ibsa-a1/Dynamic-QR-Based-Class-Attendance-System.git",
     demo: "https://dynamic-qr-based-class-attendance-s.vercel.app",
     status: "Live project",
+    featured: true,
   },
   {
     id: 11,
     category: "fullstack",
     title: "ShopSync",
-    summary: "Telegram-powered storefront — post a product, it goes live instantly.",
+    summary: "Telegram-powered e-commerce storefront",
     description:
-      "A MERN ecommerce platform using Telegram as its CMS. Shop owners post products to their Telegram channel, and a bot automatically syncs them to the live storefront — no admin panel required. Built for small businesses already using Telegram.",
+      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront — no admin panel needed. Purpose-built for small businesses already on Telegram.",
     image: shopSync_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API"],
     highlights: [
       "Telegram channel acts as the product management backend",
       "Bot auto-syncs new posts to the live store in real time",
-      "Full cart, order, and storefront UX without a separate admin panel",
+      "Full cart, order, and storefront UX — no separate admin panel",
     ],
     code: "https://github.com/ibsa-a1/ShopSync.git",
     demo: null,
     status: "In development",
+    featured: true,
   },
 ];

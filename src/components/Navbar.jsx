@@ -5,6 +5,7 @@ import { useTheme } from "./useTheme";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -15,11 +16,26 @@ const Navbar = () => {
     };
   }, [showMobileMenu]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
         <div className="section-shell">
-          <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-slate-200/70 bg-white/75 px-5 py-3 shadow-[0_18px_50px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-black/45 dark:shadow-none">
+          <div
+            className={`mx-auto flex max-w-6xl items-center justify-between rounded-full border px-5 py-3 backdrop-blur-xl transition-all duration-300 ${
+              scrolled
+                ? "border-slate-300/80 bg-white/85 shadow-[0_18px_50px_rgba(15,23,42,0.12)] dark:border-white/15 dark:bg-black/65 dark:shadow-[0_18px_50px_rgba(0,0,0,0.3)]"
+                : "border-slate-200/70 bg-white/75 shadow-[0_18px_50px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-black/45 dark:shadow-none"
+            }`}
+          >
             <a href="#top" className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900/80 dark:text-white/80">
               Ibsa Abera
             </a>
@@ -29,7 +45,7 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-slate-700/75 hover:text-slate-950 dark:text-white/65 dark:hover:text-white"
+                  className="text-sm text-slate-700/80 hover:text-slate-950 dark:text-white/65 dark:hover:text-white"
                 >
                   {link.label}
                 </a>

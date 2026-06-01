@@ -8,17 +8,17 @@ const Footer = () => {
     <footer className="border-t border-slate-200/10 py-8 transition-colors duration-200 dark:border-white/10">
       <div className="section-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-700 dark:text-white/50">
             Ibsa Abera
           </p>
-          <p className="mt-2 text-sm text-slate-700/70 dark:text-white/55">
-            MERN developer building polished interfaces and practical backend
-            systems.
+          <p className="mt-2 text-sm text-slate-600 dark:text-white/55">
+            Fullstack MERN developer — building interfaces people enjoy and
+            backends they can rely on.
           </p>
         </div>
 
         <div className="flex items-center gap-4">
-          <p className="text-sm text-slate-600/80 dark:text-white/45">
+          <p className="text-sm text-slate-500 dark:text-white/45">
             &copy; {currentYear} All rights reserved.
           </p>
           <a

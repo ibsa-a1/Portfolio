@@ -34,12 +34,12 @@ html.light body {
 }
 
 html.light ::selection {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(99, 102, 241, 0.15);
   color: #111111;
 }
 
 ::selection {
-  background: rgba(245, 245, 245, 0.16);
+  background: rgba(129, 140, 248, 0.25);
   color: #ffffff;
 }
 
@@ -66,11 +66,11 @@ textarea {
   }
 
   .section-kicker {
-    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)];
+    @apply mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-400/20 bg-indigo-500/8 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-indigo-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)];
   }
 
   html.light .section-kicker {
-    @apply border-black/15 bg-black/5 text-black/60;
+    @apply border-indigo-500/20 bg-indigo-500/8 text-indigo-600;
   }
 
   .section-title {
@@ -82,11 +82,11 @@ textarea {
   }
 
   .section-copy {
-    @apply max-w-3xl text-base leading-8 text-white/65 sm:text-lg;
+    @apply max-w-3xl text-base leading-8 text-white/70 sm:text-lg;
   }
 
   html.light .section-copy {
-    @apply text-black/60;
+    @apply text-black/65;
   }
 
   .surface-panel {
@@ -114,11 +114,11 @@ textarea {
   }
 
   .tag {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-sm text-white/70 transition duration-200;
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-sm text-white/75 transition duration-200;
   }
 
   html.light .tag {
-    @apply border-black/10 bg-black/5 text-black/60;
+    @apply border-black/10 bg-black/5 text-black/65;
   }
 
   .primary-btn {
@@ -138,11 +138,44 @@ textarea {
   }
 
   .input-shell {
-    @apply w-full rounded-2xl border border-white/12 bg-white/5 px-4 py-4 text-sm text-white outline-none placeholder:text-white/35 focus:border-white/30 focus:bg-white/8;
+    @apply w-full rounded-2xl border border-white/12 bg-white/5 px-4 py-4 text-sm text-white outline-none placeholder:text-white/40 focus:border-indigo-400/40 focus:bg-white/8 focus:ring-1 focus:ring-indigo-400/20;
   }
 
   html.light .input-shell {
-    @apply border-black/15 bg-black/5 text-black outline-none placeholder:text-black/35 focus:border-black/30 focus:bg-black/8;
+    @apply border-black/15 bg-black/5 text-black outline-none placeholder:text-black/40 focus:border-indigo-500/40 focus:bg-black/8 focus:ring-1 focus:ring-indigo-500/20;
+  }
+
+  /* Featured project badge */
+  .featured-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-300;
+  }
+
+  html.light .featured-badge {
+    @apply border-amber-500/30 bg-amber-500/12 text-amber-700;
+  }
+
+  /* Availability indicator */
+  .status-dot {
+    @apply relative flex h-2.5 w-2.5;
+  }
+
+  .status-dot::before {
+    content: "";
+    @apply absolute inset-0 animate-ping rounded-full bg-emerald-400/75;
+  }
+
+  .status-dot::after {
+    content: "";
+    @apply relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply mx-auto h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+
+  html.light .section-divider {
+    @apply via-black/10;
   }
 
   .custom-toast {

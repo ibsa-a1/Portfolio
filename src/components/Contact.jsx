@@ -8,6 +8,7 @@ import {
   Phone,
   Send,
 } from "lucide-react";
+import { motion as Motion } from "motion/react";
 import { toast } from "react-toastify";
 
 const contactCards = [
@@ -69,9 +70,17 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 sm:py-28">
+      <div className="section-divider mb-24" />
+
       <div className="section-shell">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="space-y-6">
+          <Motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
             <div>
               <span className="section-kicker">Contact</span>
               <h2 className="section-title">
@@ -88,8 +97,15 @@ const Contact = () => {
             </div>
 
             <div className="grid gap-4">
-              {contactCards.map(({ icon, label, value, href }) => (
-                <div key={label} className="surface-panel interactive-panel p-5">
+              {contactCards.map(({ icon, label, value, href }, i) => (
+                <Motion.div
+                  key={label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="surface-panel interactive-panel p-5"
+                >
                   <div className="flex items-start gap-4">
                     <div className="rounded-2xl border border-slate-200/10 bg-slate-100/8 p-3 transition-colors duration-200 dark:border-white/10 dark:bg-white/8">
                       {createElement(icon, {
@@ -97,29 +113,29 @@ const Contact = () => {
                       })}
                     </div>
                     <div>
-                      <p className="text-sm uppercase tracking-[0.22em] text-slate-600/80 dark:text-white/40">
+                      <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-500 dark:text-white/45">
                         {label}
                       </p>
                       {href ? (
                         <a
                           href={href}
-                          className="mt-2 inline-block text-base text-slate-700/80 transition-colors duration-200 hover:text-slate-950 dark:text-white/80 dark:hover:text-white"
+                          className="mt-2 inline-block text-base text-slate-800 transition-colors duration-200 hover:text-slate-950 dark:text-white/85 dark:hover:text-white"
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="mt-2 text-base text-slate-700/80 dark:text-white/80">
+                        <p className="mt-2 text-base text-slate-800 dark:text-white/85">
                           {value}
                         </p>
                       )}
                     </div>
                   </div>
-                </div>
+                </Motion.div>
               ))}
             </div>
 
             <div className="surface-panel interactive-panel p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
                 Online
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
@@ -147,23 +163,29 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </Motion.div>
 
-          <div className="surface-panel interactive-panel p-6 sm:p-8">
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-600/80 dark:text-white/40">
+          <Motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="surface-panel interactive-panel p-6 sm:p-8"
+          >
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
               Send a Message
             </p>
             <h3 className="mt-4 text-3xl font-semibold text-slate-950 dark:text-white">
               Tell me what you&apos;re building.
             </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-700/70 dark:text-white/60">
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-700/75 dark:text-white/65">
               Share the product idea, workflow, or feature you need help with.
               I&apos;ll reply with a clear next step as soon as I can.
             </p>
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">
               <div>
-                <label className="mb-2 block text-sm text-slate-600 dark:text-white/65">
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Your name
                 </label>
                 <input
@@ -176,7 +198,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm text-slate-600 dark:text-white/65">
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Your email
                 </label>
                 <input
@@ -189,7 +211,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm text-slate-600 dark:text-white/65">
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Project details
                 </label>
                 <textarea
@@ -210,7 +232,7 @@ const Contact = () => {
                 {result || "Send message"}
               </button>
             </form>
-          </div>
+          </Motion.div>
         </div>
       </div>
     </section>
