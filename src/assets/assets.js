@@ -200,7 +200,8 @@ export const projectsData = [
     id: 6,
     category: "backend",
     title: "Dynamic QR Attendance API",
-    summary: "Secure attendance backend with time-limited QR and device binding.",
+    summary:
+      "Secure attendance backend with time-limited QR and device binding.",
     description:
       "Server layer for a MERN attendance system where teachers generate session-based QR codes and students scan to mark presence. Device fingerprinting prevents proxy attendance by binding each scan to a verified device.",
     image: attendQR_img,
@@ -294,7 +295,7 @@ export const projectsData = [
     title: "ShopSync",
     summary: "Telegram-powered e-commerce storefront",
     description:
-      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront — no admin panel needed. Purpose-built for small businesses already on Telegram.",
+      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront. Purpose-built for small businesses already posting & selling producs on Telegram.",
     image: shopSync_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API"],
     highlights: [
@@ -303,8 +304,8 @@ export const projectsData = [
       "Full cart, order, and storefront UX — no separate admin panel",
     ],
     code: "https://github.com/ibsa-a1/ShopSync.git",
-    demo: null,
-    status: "In development",
+    demo: "https://shop-sync-sand.vercel.app/",
+    status: "Live Project",
     featured: true,
   },
 ];
