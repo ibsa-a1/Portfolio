@@ -11,7 +11,6 @@ import {
 import { FiGithub as Github, FiLinkedin as Linkedin } from "react-icons/fi";
 import { motion as Motion } from "motion/react";
 import { toast } from "react-toastify";
-import { submitContactForm } from "../app/actions";
 
 const contactCards = [
   {
@@ -39,20 +38,50 @@ const Contact = () => {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setResult("Sending...");
-    
-    const formData = new FormData(event.currentTarget);
-    const response = await submitContactForm(formData);
 
-    if (response.success) {
-      setResult("");
-      toast.success(response.message);
-      event.currentTarget.reset();
+    // React clears event.currentTarget once the handler returns, so keep the
+    // form element in a variable before any await.
+    const form = event.currentTarget;
+
+    // Web3Forms access keys are meant to be public and the API is meant to be
+    // called from the browser (server-side calls are blocked on the free plan).
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+    if (!accessKey) {
+      console.error("NEXT_PUBLIC_WEB3FORMS_KEY is not set");
+      toast.error(
+        "The contact form is temporarily unavailable. Please email me directly.",
+      );
       return;
     }
 
-    toast.error(response.message);
-    setResult("");
+    setResult("Sending...");
+
+    try {
+      const formData = new FormData(form);
+      formData.append("access_key", accessKey);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully!");
+        form.reset();
+        return;
+      }
+
+      console.error("Web3Forms error", data);
+      toast.error(data.message || "Something went wrong while sending.");
+    } catch (error) {
+      console.error("Web3Forms request failed", error);
+      toast.error("Network error. Please try again in a moment.");
+    } finally {
+      setResult("");
+    }
   };
 
   return (

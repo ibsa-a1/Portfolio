@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Name | Where it is used | Notes |
 | --- | --- | --- |
-| `WEB3FORMS_KEY` | `app/actions.ts` (server action) | Web3Forms access key for the contact form. Server-only, so do not prefix it with `NEXT_PUBLIC_`. Set it in Vercel as well. |
+| `NEXT_PUBLIC_WEB3FORMS_KEY` | `components/Contact.tsx` | Web3Forms access key for the contact form. Public by design: the form posts from the browser, because Web3Forms blocks server-side calls on its free plan. Set it in Vercel for Production and Preview, then redeploy (it is baked in at build time). |
 
 ## Scripts
 
@@ -28,7 +28,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Project structure
 
-- `app/` — routes, layout, metadata, `robots.ts`, `sitemap.ts`, contact server action
+- `app/` — routes, layout, metadata, `robots.ts`, `sitemap.ts`
 - `components/` — page sections and the theme provider
 - `lib/data.ts` — projects, stats and copy shown on the page
 - `assets/` — images imported by `lib/data.ts`
