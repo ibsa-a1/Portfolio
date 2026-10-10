@@ -107,7 +107,7 @@ const Header = () => {
                 Contact me
               </a>
               <a
-                href="/Ibsa_Abera_CV.pdf"
+                href="/Ibsa_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="secondary-btn"
