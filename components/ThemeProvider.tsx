@@ -69,7 +69,6 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
         autoClose={3000}
         theme={theme}
         toastClassName="custom-toast"
-        bodyClassName="custom-toast-body"
       />
       {children}
     </ThemeContext.Provider>

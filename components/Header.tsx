@@ -18,7 +18,7 @@ import {
   SiReact,
   SiTailwindcss,
 } from "react-icons/si";
-import { motion as Motion } from "motion/react";
+import { motion as Motion, type Variants } from "motion/react";
 import Navbar from "./Navbar";
 import { assets, heroStats } from "../lib/data";
 
@@ -49,7 +49,7 @@ const focusCards = [
   },
 ];
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({
     opacity: 1,
@@ -131,7 +131,7 @@ const Header = () => {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/ibsaabera/"
+                href="https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tag hover:bg-slate-200/80 hover:text-slate-950 dark:hover:bg-white/10 dark:hover:text-white"
@@ -175,6 +175,7 @@ const Header = () => {
             <div className="relative">
               <div className="ghost-panel overflow-hidden p-3 relative h-[26rem] w-full sm:h-[30rem] rounded-[1.5rem]">
                 <Image
+                  priority
                   src={assets.profile_img}
                   alt="Ibsa Abera portrait"
                   fill

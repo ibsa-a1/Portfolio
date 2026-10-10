@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import {
+  type LucideIcon,
   ArrowUpRight,
   CheckCircle2,
   Layers3,
@@ -12,9 +13,9 @@ import {
 } from "lucide-react";
 import { FiGithub as Github } from "react-icons/fi";
 import { motion as Motion } from "motion/react";
-import { Project, ProjectCategory } from "../lib/data";
+import type { Project } from "../lib/data";
 
-const categoryMeta: Record<string, { label: string; icon: any }> = {
+const categoryMeta: Record<string, { label: string; icon: LucideIcon }> = {
   frontend: {
     label: "Frontend",
     icon: LayoutTemplate,

@@ -51,13 +51,6 @@ export interface NavLink {
   href: string;
 }
 
-export interface ContactCard {
-  icon: any; // We'll type this better in the component or keep it loose here. Not strictly defined here.
-  label: string;
-  value: string;
-  href: string;
-}
-
 const backendProjectImages = {
   ecommerce:
     "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80",
@@ -340,7 +333,7 @@ export const projectsData: Project[] = [
     title: "ShopSync",
     summary: "Telegram-powered e-commerce storefront",
     description:
-      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront. Purpose-built for small businesses already posting & selling producs on Telegram.",
+      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront. Purpose-built for small businesses already posting & selling products on Telegram.",
     image: shopSync_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API"],
     highlights: [

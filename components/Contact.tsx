@@ -136,7 +136,7 @@ const Contact = () => {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/ibsaabera/"
+                  href="https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="secondary-btn"
@@ -172,11 +172,12 @@ const Contact = () => {
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
+                <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Your name
                 </label>
                 <input
                   type="text"
+                  id="contact-name"
                   name="name"
                   placeholder="Enter your full name"
                   required
@@ -185,11 +186,12 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
+                <label htmlFor="contact-email" className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Your email
                 </label>
                 <input
                   type="email"
+                  id="contact-email"
                   name="email"
                   placeholder="Enter your email address"
                   required
@@ -198,10 +200,11 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
+                <label htmlFor="contact-message" className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Project details
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   placeholder="Describe your project, stack, timeline, or what you need improved."
                   required

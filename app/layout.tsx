@@ -16,6 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ibsaabera.tech"),
+  alternates: { canonical: "/" },
   title: {
     template: "%s | Ibsa Abera",
     default: "Ibsa Abera | Full Stack Developer",
@@ -36,6 +38,20 @@ export const metadata: Metadata = {
   },
 };
 
+// Runs before first paint so dark-mode visitors never see a light flash.
+const themeScript = `(() => {
+  try {
+    const saved = localStorage.getItem("theme");
+    const theme = saved === "light" || saved === "dark"
+      ? saved
+      : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const root = document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+    root.style.colorScheme = theme;
+  } catch (e) {}
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,7 +65,7 @@ export default function RootLayout({
     url: "https://ibsaabera.tech",
     sameAs: [
       "https://github.com/ibsa-a1",
-      "https://www.linkedin.com/in/ibsaabera/"
+      "https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
     ],
   };
 
@@ -59,6 +75,9 @@ export default function RootLayout({
       className={`${instrumentSerif.variable} ${spaceGrotesk.variable} antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <script
           type="application/ld+json"
