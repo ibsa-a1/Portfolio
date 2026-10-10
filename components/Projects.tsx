@@ -10,8 +10,7 @@ import { projectCategories, projectsData } from "../lib/data";
 
 const GITHUB_URL = "https://github.com/ibsa-a1?tab=repositories";
 
-// Full-stack first, since those are the projects that best show end-to-end work.
-const categoryOrder = ["fullstack", "backend", "frontend"];
+const categoryOrder = ["frontend", "backend", "fullstack"];
 
 interface ProjectsProps {
   /** "featured" = home page (full-stack only). "all" = the /projects page. */

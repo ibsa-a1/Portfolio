@@ -76,8 +76,8 @@ export const assets = {
 export const navLinks: NavLink[] = [
   { label: "Home", href: "/#top" },
   { label: "About", href: "/#about" },
-  { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -375,36 +375,6 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
-export interface EducationItem {
-  title: string;
-  institution: string;
-  period?: string;
-  details?: string[];
-}
-
-export const education: EducationItem[] = [
-  {
-    title: "B.Sc. in Software Engineering",
-    institution: "Addis Ababa Science and Technology University",
-    period: "Expected 2028",
-    details: [
-      "Data Structures & Algorithms",
-      "Internet Programming",
-      "Database Systems",
-      "Object-Oriented Programming",
-      "Operating Systems",
-    ],
-  },
-  {
-    title: "Frontend Development with HTML, CSS & JS",
-    institution: "Google Developers Group (GDG), AASTU",
-  },
-  {
-    title: "Backend Development with Node.js, Express & MongoDB",
-    institution: "Google Developers Group (GDG), AASTU",
-  },
-];
-
 // Stats are computed from the project data so they cannot drift out of date.
 const liveFullstackCount = projectsData.filter(
   (project) => project.category === "fullstack" && project.demo,
@@ -412,7 +382,6 @@ const liveFullstackCount = projectsData.filter(
 
 export const heroStats: HeroStat[] = [
   { value: "2", label: "Current engineering roles" },
-  { value: String(liveFullstackCount), label: "Live full-stack projects" },
-  { value: "4th", label: "Hackathon placing, 20+ teams" },
-  { value: String(projectsData.length), label: "Projects built" },
+  { value: `${liveFullstackCount}+`, label: "Live full-stack projects" },
+  { value: `${projectsData.length}+`, label: "Projects built & shipped" },
 ];

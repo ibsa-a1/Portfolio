@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { motion as Motion } from "motion/react";
-import { education, experience } from "../lib/data";
+import { experience } from "../lib/data";
 
 export default function Experience() {
   return (
@@ -73,43 +73,6 @@ export default function Experience() {
             </Motion.article>
           ))}
         </div>
-
-        <Motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="surface-panel mt-6 p-6 sm:p-8"
-        >
-          <div className="flex items-center gap-3">
-            <GraduationCap className="h-5 w-5 text-slate-950 dark:text-white" />
-            <h3 className="text-sm font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
-              Education
-            </h3>
-          </div>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {education.map((item) => (
-              <div key={item.title}>
-                <h4 className="text-base font-semibold text-slate-950 dark:text-white">
-                  {item.title}
-                </h4>
-                <p className="mt-1 text-sm text-slate-700/75 dark:text-white/60">
-                  {item.institution}
-                  {item.period ? ` · ${item.period}` : ""}
-                </p>
-                {item.details && (
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {item.details.map((d) => (
-                      <span key={d} className="tag text-xs">
-                        {d}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </Motion.div>
       </div>
     </section>
   );

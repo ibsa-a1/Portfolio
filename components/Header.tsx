@@ -141,7 +141,7 @@ const Header = () => {
             <Motion.div
               variants={fadeUp}
               custom={6}
-              className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4"
+              className="mt-10 grid gap-3 sm:grid-cols-3"
             >
               {heroStats.map((item, i) => (
                 <Motion.div

@@ -10,8 +10,8 @@ export default function Home() {
     <SiteShell>
       <Header />
       <About />
-      <Experience />
       <Projects />
+      <Experience />
       <Contact />
     </SiteShell>
   );
