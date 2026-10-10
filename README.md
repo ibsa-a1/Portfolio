@@ -1,12 +1,35 @@
-# React + Vite
+# Ibsa Abera — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with Next.js (App Router), TypeScript, Tailwind CSS v4 and Motion.
+Live at [ibsaabera.tech](https://ibsaabera.tech).
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+cp .env.example .env.local   # then add your Web3Forms access key
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Open [http://localhost:3000](http://localhost:3000).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment variables
+
+| Name | Where it is used | Notes |
+| --- | --- | --- |
+| `NEXT_PUBLIC_WEB3FORMS_KEY` | `components/Contact.tsx` | Web3Forms access key for the contact form. Public by design: the form posts from the browser, because Web3Forms blocks server-side calls on its free plan. Set it in Vercel for Production and Preview, then redeploy (it is baked in at build time). |
+
+## Scripts
+
+- `npm run dev` — start the dev server
+- `npm run build` — production build (also type-checks)
+- `npm run start` — run the production build
+- `npm run lint` — lint with ESLint
+
+## Project structure
+
+- `app/` — routes, layout, metadata, `robots.ts`, `sitemap.ts`
+- `components/` — page sections and the theme provider
+- `lib/data.ts` — projects, stats and copy shown on the page
+- `assets/` — images imported by `lib/data.ts`
+- `public/` — static files (resume PDF)

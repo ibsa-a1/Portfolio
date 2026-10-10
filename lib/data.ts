@@ -1,16 +1,55 @@
-import profile_img from "./profile_img.webp";
-import github_icon from "./github_icon.svg";
-import linkedin_icon from "./linkedin_icon.svg";
-import about_image from "./about_image.jpg";
-import dev_img from "./dev_img.png";
-import resume from "./Ibsa_Abera_CV-1.pdf";
-import project_img_1 from "./project_img_1.jpg";
-import project_img_2 from "./project_img_2.jpg";
-import project_img_3 from "./project_img_3.jpg";
-import project_img_4 from "./project_img_4.jpg";
-import fuelPass_img from "./FuelPass.jpg";
-import shopSync_img from "./ShopSync.jpg";
-import attendQR_img from "./AttendQR.jpg";
+import { StaticImageData } from "next/image";
+import profile_img from "../assets/profile_img.webp";
+import github_icon from "../assets/github_icon.svg";
+import linkedin_icon from "../assets/linkedin_icon.svg";
+import about_image from "../assets/about_image.jpg";
+import dev_img from "../assets/dev_img.png";
+// resume pdf is now in public/Ibsa_Abera_CV.pdf, we don't import it via webpack/turbopack.
+// It will be referenced by path "/Ibsa_Abera_CV.pdf" directly in components.
+import project_img_1 from "../assets/project_img_1.jpg";
+import project_img_2 from "../assets/project_img_2.jpg";
+import project_img_3 from "../assets/project_img_3.jpg";
+import project_img_4 from "../assets/project_img_4.jpg";
+import fuelPass_img from "../assets/FuelPass.jpg";
+import shopSync_img from "../assets/ShopSync.jpg";
+import attendQR_img from "../assets/AttendQR.jpg";
+
+export interface Project {
+  id: number | string;
+  category: string;
+  title: string;
+  summary: string;
+  description: string;
+  image: StaticImageData | string;
+  stack: string[];
+  highlights: string[];
+  code: string;
+  demo: string | null;
+  status: string;
+  featured?: boolean;
+}
+
+export interface ExpertiseArea {
+  title: string;
+  description: string;
+}
+
+export interface HeroStat {
+  value: string;
+  label: string;
+}
+
+export interface ProjectCategory {
+  id: string;
+  label: string;
+  eyebrow: string;
+  description: string;
+}
+
+export interface NavLink {
+  label: string;
+  href: string;
+}
 
 const backendProjectImages = {
   ecommerce:
@@ -25,7 +64,6 @@ export const assets = {
   linkedin_icon,
   about_image,
   dev_img,
-  resume,
   project_img_1,
   project_img_2,
   project_img_3,
@@ -35,21 +73,21 @@ export const assets = {
   attendQR_img,
 };
 
-export const navLinks = [
+export const navLinks: NavLink[] = [
   { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const heroStats = [
+export const heroStats: HeroStat[] = [
   { value: "11+", label: "Projects built & shipped" },
   { value: "MERN", label: "Primary stack" },
   { value: "3", label: "Live fullstack products" },
   { value: "4", label: "Backend APIs designed" },
 ];
 
-export const expertiseAreas = [
+export const expertiseAreas: ExpertiseArea[] = [
   {
     title: "Frontend Engineering",
     description:
@@ -72,14 +110,14 @@ export const expertiseAreas = [
   },
 ];
 
-export const serviceHighlights = [
+export const serviceHighlights: string[] = [
   "Build and deploy complete MERN applications — from database schema to polished UI",
   "Design secure REST APIs with JWT auth, role-based access, and real-time updates",
   "Turn rough ideas into clean, production-ready interfaces people actually enjoy using",
   "Collaborate closely, communicate clearly, and ship iteratively based on real feedback",
 ];
 
-export const projectCategories = [
+export const projectCategories: ProjectCategory[] = [
   {
     id: "frontend",
     label: "Frontend",
@@ -103,7 +141,7 @@ export const projectCategories = [
   },
 ];
 
-export const projectsData = [
+export const projectsData: Project[] = [
   {
     id: 1,
     category: "frontend",
@@ -295,7 +333,7 @@ export const projectsData = [
     title: "ShopSync",
     summary: "Telegram-powered e-commerce storefront",
     description:
-      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront. Purpose-built for small businesses already posting & selling producs on Telegram.",
+      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront. Purpose-built for small businesses already posting & selling products on Telegram.",
     image: shopSync_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API"],
     highlights: [

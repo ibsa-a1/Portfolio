@@ -1,13 +1,14 @@
-import { createElement, useState } from "react";
+"use client";
+
+import React, { createElement, useState } from "react";
 import {
   ArrowUpRight,
-  Github,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
   Send,
 } from "lucide-react";
+import { FiGithub as Github, FiLinkedin as Linkedin } from "react-icons/fi";
 import { motion as Motion } from "motion/react";
 import { toast } from "react-toastify";
 
@@ -35,37 +36,52 @@ const contactCards = [
 const Contact = () => {
   const [result, setResult] = useState("");
 
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const emailKey = import.meta.env.VITE_WEB3_KEY;
+    // React clears event.currentTarget once the handler returns, so keep the
+    // form element in a variable before any await.
+    const form = event.currentTarget;
 
-    if (!emailKey) {
-      toast.error("Add VITE_WEB3_KEY to your environment before sending.");
+    // Web3Forms access keys are meant to be public and the API is meant to be
+    // called from the browser (server-side calls are blocked on the free plan).
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+    if (!accessKey) {
+      console.error("NEXT_PUBLIC_WEB3FORMS_KEY is not set");
+      toast.error(
+        "The contact form is temporarily unavailable. Please email me directly.",
+      );
       return;
     }
 
     setResult("Sending...");
-    const formData = new FormData(event.target);
-    formData.append("access_key", emailKey);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const formData = new FormData(form);
+      formData.append("access_key", accessKey);
 
-    const data = await response.json();
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (data.success) {
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully!");
+        form.reset();
+        return;
+      }
+
+      console.error("Web3Forms error", data);
+      toast.error(data.message || "Something went wrong while sending.");
+    } catch (error) {
+      console.error("Web3Forms request failed", error);
+      toast.error("Network error. Please try again in a moment.");
+    } finally {
       setResult("");
-      toast.success("Message sent successfully!");
-      event.target.reset();
-      return;
     }
-
-    console.error("Web3Forms error", data);
-    toast.error(data.message || "Something went wrong while sending.");
-    setResult("");
   };
 
   return (
@@ -185,11 +201,12 @@ const Contact = () => {
 
             <form onSubmit={onSubmit} className="mt-8 space-y-5">
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
+                <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Your name
                 </label>
                 <input
                   type="text"
+                  id="contact-name"
                   name="name"
                   placeholder="Enter your full name"
                   required
@@ -198,11 +215,12 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
+                <label htmlFor="contact-email" className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Your email
                 </label>
                 <input
                   type="email"
+                  id="contact-email"
                   name="email"
                   placeholder="Enter your email address"
                   required
@@ -211,10 +229,11 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
+                <label htmlFor="contact-message" className="mb-2 block text-sm font-medium text-slate-700 dark:text-white/70">
                   Project details
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   placeholder="Describe your project, stack, timeline, or what you need improved."
                   required

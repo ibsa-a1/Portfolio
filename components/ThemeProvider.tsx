@@ -1,13 +1,23 @@
-import { useEffect, useState } from "react";
-import { ThemeContext } from "./useTheme";
+"use client";
 
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
+import { useEffect, useState, ReactNode } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ThemeContext } from "./use-theme";
+
+type Theme = "dark" | "light";
+
+interface ThemeProviderProps {
+  children: ReactNode;
+}
+
+const ThemeProvider = ({ children }: ThemeProviderProps) => {
+  const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "dark";
 
     const saved = window.localStorage.getItem("theme");
     if (saved === "light" || saved === "dark") {
-      return saved;
+      return saved as Theme;
     }
 
     return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -38,7 +48,7 @@ const ThemeProvider = ({ children }) => {
     if (isThemeChosen) return;
 
     const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (event) => {
+    const handleChange = (event: MediaQueryListEvent) => {
       setTheme(event.matches ? "dark" : "light");
     };
 
@@ -54,6 +64,12 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        theme={theme}
+        toastClassName="custom-toast"
+      />
       {children}
     </ThemeContext.Provider>
   );

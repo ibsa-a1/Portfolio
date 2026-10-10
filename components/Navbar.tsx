@@ -1,12 +1,14 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
-import { navLinks } from "../assets/assets";
-import { useTheme } from "./useTheme";
+import { navLinks } from "../lib/data";
+import { useTheme } from "./use-theme";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
   useEffect(() => {
     document.body.style.overflow = showMobileMenu ? "hidden" : "auto";
@@ -14,6 +16,15 @@ const Navbar = () => {
     return () => {
       document.body.style.overflow = "auto";
     };
+  }, [showMobileMenu]);
+
+  useEffect(() => {
+    if (!showMobileMenu) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setShowMobileMenu(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [showMobileMenu]);
 
   useEffect(() => {
@@ -59,11 +70,8 @@ const Navbar = () => {
                 className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 hover:bg-slate-200/70 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
                 aria-label="Toggle theme"
               >
-                {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
-                ) : (
-                  <Moon className="h-4 w-4" />
-                )}
+                <Sun className="hidden h-4 w-4 dark:block" />
+                <Moon className="h-4 w-4 dark:hidden" />
               </button>
               <a href="#contact" className="secondary-btn px-4 py-2">
                 Let&apos;s talk
@@ -78,11 +86,8 @@ const Navbar = () => {
                 className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 hover:bg-slate-200/70 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
                 aria-label="Toggle theme"
               >
-                {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
-                ) : (
-                  <Moon className="h-4 w-4" />
-                )}
+                <Sun className="hidden h-4 w-4 dark:block" />
+                <Moon className="h-4 w-4 dark:hidden" />
               </button>
               <button
                 type="button"
@@ -98,6 +103,8 @@ const Navbar = () => {
       </header>
 
       <div
+        inert={!showMobileMenu}
+        aria-hidden={!showMobileMenu}
         className={`fixed inset-0 z-[60] bg-white/80 backdrop-blur-xl transition dark:bg-black/80 ${
           showMobileMenu
             ? "pointer-events-auto opacity-100"
@@ -120,11 +127,8 @@ const Navbar = () => {
                 className="rounded-full border border-slate-200/80 bg-slate-100/70 p-2 text-slate-950 hover:bg-slate-200/70 dark:border-white/10 dark:bg-white/6 dark:text-white dark:hover:bg-white/10"
                 aria-label="Toggle theme"
               >
-                {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
-                ) : (
-                  <Moon className="h-4 w-4" />
-                )}
+                <Sun className="hidden h-4 w-4 dark:block" />
+                <Moon className="h-4 w-4 dark:hidden" />
               </button>
               <button
                 type="button"
