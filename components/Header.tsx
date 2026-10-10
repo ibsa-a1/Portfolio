@@ -1,13 +1,15 @@
-import { createElement } from "react";
+"use client";
+
+import React, { createElement } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   Braces,
   Database,
   Download,
-  Github,
-  Linkedin,
   Server,
 } from "lucide-react";
+import { FiGithub as Github, FiLinkedin as Linkedin } from "react-icons/fi";
 import {
   SiExpress,
   SiJavascript,
@@ -18,7 +20,7 @@ import {
 } from "react-icons/si";
 import { motion as Motion } from "motion/react";
 import Navbar from "./Navbar";
-import { assets, heroStats } from "../assets/assets";
+import { assets, heroStats } from "../lib/data";
 
 const stackIcons = [
   { label: "React", icon: SiReact, color: "#61dafb" },
@@ -108,7 +110,7 @@ const Header = () => {
                 Contact me
               </a>
               <a
-                href={assets.resume}
+                href="/Ibsa_Abera_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="secondary-btn"
@@ -129,7 +131,7 @@ const Header = () => {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
+                href="https://www.linkedin.com/in/ibsaabera/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tag hover:bg-slate-200/80 hover:text-slate-950 dark:hover:bg-white/10 dark:hover:text-white"
@@ -171,11 +173,13 @@ const Header = () => {
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.12),_transparent_40%)]" />
             <div className="relative">
-              <div className="ghost-panel overflow-hidden p-3">
-                <img
+              <div className="ghost-panel overflow-hidden p-3 relative h-[26rem] w-full sm:h-[30rem] rounded-[1.5rem]">
+                <Image
                   src={assets.profile_img}
                   alt="Ibsa Abera portrait"
-                  className="h-[26rem] w-full rounded-[1.5rem] object-cover sm:h-[30rem]"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="rounded-[1.5rem] object-cover"
                 />
               </div>
 

@@ -1,16 +1,20 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import {
   ArrowUpRight,
   CheckCircle2,
-  Github,
   Layers3,
   LayoutTemplate,
   Server,
   Star,
 } from "lucide-react";
+import { FiGithub as Github } from "react-icons/fi";
 import { motion as Motion } from "motion/react";
+import { Project, ProjectCategory } from "../lib/data";
 
-const categoryMeta = {
+const categoryMeta: Record<string, { label: string; icon: any }> = {
   frontend: {
     label: "Frontend",
     icon: LayoutTemplate,
@@ -25,8 +29,13 @@ const categoryMeta = {
   },
 };
 
-export default function ProjectCard({ project, index = 0 }) {
-  const meta = categoryMeta[project.category];
+interface ProjectCardProps {
+  project: Project;
+  index?: number;
+}
+
+export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  const meta = categoryMeta[project.category as keyof typeof categoryMeta];
   const CategoryIcon = meta.icon;
 
   return (
@@ -39,12 +48,13 @@ export default function ProjectCard({ project, index = 0 }) {
       className="surface-panel group overflow-hidden"
     >
       {/* Image section */}
-      <div className="relative overflow-hidden">
-        <img
+      <div className="relative overflow-hidden h-56 w-full">
+        <Image
           src={project.image}
           alt={project.title}
-          className="h-56 w-full object-cover transition duration-700 group-hover:scale-105"
-          loading="lazy"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition duration-300 group-hover:via-black/10" />
 

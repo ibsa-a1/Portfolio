@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import { motion as Motion } from "motion/react";
 import ProjectCard from "./ProjectCard";
-import { projectCategories, projectsData } from "../assets/assets";
+import { projectCategories, projectsData } from "../lib/data";
 
 export default function Projects() {
   return (

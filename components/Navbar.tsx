@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
-import { navLinks } from "../assets/assets";
-import { useTheme } from "./useTheme";
+import { navLinks } from "../lib/data";
+import { useTheme } from "./use-theme";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);

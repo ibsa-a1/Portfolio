@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -17,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-family: var(--font-space-grotesk), "Segoe UI", sans-serif;
   transition:
     background-color 200ms ease,
     color 200ms ease;
@@ -57,7 +56,7 @@ textarea {
 
 @layer components {
   .display-font {
-    font-family: "Instrument Serif", Georgia, serif;
+    font-family: var(--font-instrument-serif), Georgia, serif;
     letter-spacing: -0.03em;
   }
 

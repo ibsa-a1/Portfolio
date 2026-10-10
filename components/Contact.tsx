@@ -1,15 +1,17 @@
-import { createElement, useState } from "react";
+"use client";
+
+import React, { createElement, useState } from "react";
 import {
   ArrowUpRight,
-  Github,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
   Send,
 } from "lucide-react";
+import { FiGithub as Github, FiLinkedin as Linkedin } from "react-icons/fi";
 import { motion as Motion } from "motion/react";
 import { toast } from "react-toastify";
+import { submitContactForm } from "../app/actions";
 
 const contactCards = [
   {
@@ -35,36 +37,21 @@ const contactCards = [
 const Contact = () => {
   const [result, setResult] = useState("");
 
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const emailKey = import.meta.env.VITE_WEB3_KEY;
-
-    if (!emailKey) {
-      toast.error("Add VITE_WEB3_KEY to your environment before sending.");
-      return;
-    }
-
     setResult("Sending...");
-    const formData = new FormData(event.target);
-    formData.append("access_key", emailKey);
+    
+    const formData = new FormData(event.currentTarget);
+    const response = await submitContactForm(formData);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
+    if (response.success) {
       setResult("");
-      toast.success("Message sent successfully!");
-      event.target.reset();
+      toast.success(response.message);
+      event.currentTarget.reset();
       return;
     }
 
-    console.error("Web3Forms error", data);
-    toast.error(data.message || "Something went wrong while sending.");
+    toast.error(response.message);
     setResult("");
   };
 
@@ -149,7 +136,7 @@ const Contact = () => {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/ibsa-abera-37b6a2333/"
+                  href="https://www.linkedin.com/in/ibsaabera/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="secondary-btn"

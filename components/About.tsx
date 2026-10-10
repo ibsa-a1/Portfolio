@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import { CheckCircle2, Download } from "lucide-react";
 import { motion as Motion } from "motion/react";
-import { assets, expertiseAreas, serviceHighlights } from "../assets/assets";
+import { assets, expertiseAreas, serviceHighlights } from "../lib/data";
 
 const About = () => {
   return (
@@ -17,11 +20,13 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="surface-panel overflow-hidden p-4 sm:p-5"
           >
-            <div className="relative overflow-hidden rounded-[1.75rem]">
-              <img
+            <div className="relative overflow-hidden rounded-[1.75rem] h-full min-h-[26rem]">
+              <Image
                 src={assets.about_image}
                 alt="Ibsa Abera at work"
-                className="h-full min-h-[26rem] w-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-[1.5rem] border border-slate-200/10 bg-slate-100/40 p-5 backdrop-blur-md transition-colors duration-200 dark:border-white/10 dark:bg-black/40">
@@ -107,7 +112,7 @@ const About = () => {
               </div>
 
               <a
-                href={assets.resume}
+                href="/Ibsa_Abera_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="secondary-btn mt-6"
