@@ -20,13 +20,13 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="surface-panel overflow-hidden p-4 sm:p-5"
           >
-            <div className="relative overflow-hidden rounded-[1.75rem] h-full min-h-[26rem]">
+            <div className="relative overflow-hidden rounded-[1.75rem] min-h-[26rem]">
               <Image
                 src={assets.about_image}
                 alt="Ibsa Abera at work"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="h-full min-h-[26rem] w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 rounded-[1.5rem] border border-slate-200/10 bg-slate-100/40 p-5 backdrop-blur-md transition-colors duration-200 dark:border-white/10 dark:bg-black/40">
