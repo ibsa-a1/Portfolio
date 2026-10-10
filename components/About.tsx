@@ -34,7 +34,7 @@ const About = () => {
                   Now focused on
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">
-                  Fullstack web products with React, Node, Express, and MongoDB.
+                  Full-stack features with Next.js, TypeScript, Express and PostgreSQL.
                 </h3>
               </div>
             </div>
@@ -50,28 +50,27 @@ const About = () => {
             <div>
               <span className="section-kicker">About Me</span>
               <h2 className="section-title">
-                From frontend beginnings to{" "}
+                From frontend roots to{" "}
                 <span className="display-font text-slate-900/80 dark:text-white/80">
-                  fullstack product building.
+                  production full-stack work.
                 </span>
               </h2>
               <div className="section-copy mt-6 space-y-5">
                 <p>
-                  I began by building portfolio sites, landing pages, and
-                  UI-heavy React projects. That foundation still shapes how I
-                  work — I care about clarity, usability, responsiveness, and the
-                  small details that make an interface feel finished.
+                  I&apos;m a software engineering student at Addis Ababa
+                  Science and Technology University, building production
+                  software with Node.js, Express, React and PostgreSQL.
                 </p>
                 <p>
-                  I now build across the MERN stack, connecting React clients
-                  with Express APIs, MongoDB-backed features, authentication
-                  flows, dashboards, and admin tools that work cleanly from
-                  database to UI.
+                  Right now I work across two live roles: a full-stack
+                  internship at Everline Technologies and a backend role for
+                  AASTU Gibigubae. I&apos;m comfortable moving between frontend,
+                  backend and infrastructure, with hands-on Docker and Linux
+                  experience.
                 </p>
                 <p>
-                  I&apos;m strongest in projects where product thinking and code
-                  quality meet: turning a practical need into an interface,
-                  workflow, or service layer that people can actually use.
+                  I&apos;m looking to bring the same speed and ownership to a team
+                  building real products, not just prototypes.
                 </p>
               </div>
             </div>

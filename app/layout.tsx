@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const instrumentSerif = Instrument_Serif({
   weight: ["400"],
@@ -22,10 +23,10 @@ export const metadata: Metadata = {
     template: "%s | Ibsa Abera",
     default: "Ibsa Abera | Full Stack Developer",
   },
-  description: "Portfolio of Ibsa Abera, a Full Stack Developer specializing in React, Next.js, and modern web technologies.",
+  description: "Portfolio of Ibsa Abera, a full-stack developer building production software with Next.js, TypeScript, Express and PostgreSQL.",
   openGraph: {
     title: "Ibsa Abera | Full Stack Developer",
-    description: "Portfolio of Ibsa Abera, a Full Stack Developer specializing in React, Next.js, and modern web technologies.",
+    description: "Portfolio of Ibsa Abera, a full-stack developer building production software with Next.js, TypeScript, Express and PostgreSQL.",
     url: "https://ibsaabera.tech",
     siteName: "Ibsa Abera Portfolio",
     locale: "en_US",
@@ -34,17 +35,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ibsa Abera | Full Stack Developer",
-    description: "Portfolio of Ibsa Abera, a Full Stack Developer specializing in React, Next.js, and modern web technologies.",
+    description: "Portfolio of Ibsa Abera, a full-stack developer building production software with Next.js, TypeScript, Express and PostgreSQL.",
   },
 };
 
-// Runs before first paint so dark-mode visitors never see a light flash.
+// Runs before first paint. Light is the default; only a saved dark choice overrides it.
 const themeScript = `(() => {
   try {
     const saved = localStorage.getItem("theme");
-    const theme = saved === "light" || saved === "dark"
-      ? saved
-      : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const theme = saved === "dark" ? "dark" : "light";
     const root = document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme);
@@ -83,7 +82,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

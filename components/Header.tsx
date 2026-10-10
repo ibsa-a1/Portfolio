@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createElement } from "react";
+import type { IconType } from "react-icons";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -12,40 +13,41 @@ import {
 import { FiGithub as Github, FiLinkedin as Linkedin } from "react-icons/fi";
 import {
   SiExpress,
-  SiJavascript,
-  SiMongodb,
+  SiNextdotjs,
   SiNodedotjs,
+  SiPostgresql,
   SiReact,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 import { motion as Motion, type Variants } from "motion/react";
-import Navbar from "./Navbar";
 import { assets, heroStats } from "../lib/data";
 
-const stackIcons = [
+const stackIcons: { label: string; icon: IconType; color: string }[] = [
+  { label: "TypeScript", icon: SiTypescript, color: "#3178c6" },
   { label: "React", icon: SiReact, color: "#61dafb" },
+  { label: "Next.js", icon: SiNextdotjs, color: "#888888" },
   { label: "Node.js", icon: SiNodedotjs, color: "#8cc84b" },
-  { label: "Express", icon: SiExpress, color: "#f5f5f5" },
-  { label: "MongoDB", icon: SiMongodb, color: "#10aa50" },
+  { label: "Express", icon: SiExpress, color: "#888888" },
+  { label: "PostgreSQL", icon: SiPostgresql, color: "#4169e1" },
   { label: "Tailwind", icon: SiTailwindcss, color: "#38bdf8" },
-  { label: "JavaScript", icon: SiJavascript, color: "#f7df1e" },
 ];
 
 const focusCards = [
   {
     icon: Braces,
-    title: "Product-minded UI",
-    text: "React interfaces that stay clear, responsive, and easy to use across devices.",
+    title: "Frontend that feels finished",
+    text: "Responsive React and Next.js interfaces in TypeScript, built from clean, reusable components.",
   },
   {
     icon: Server,
-    title: "Reliable APIs",
-    text: "Express services with authentication, validation, and practical backend structure.",
+    title: "Backend you can rely on",
+    text: "REST APIs with Node.js and Express: authentication, middleware, and maintainable structure.",
   },
   {
     icon: Database,
-    title: "Connected data",
-    text: "MongoDB-backed workflows designed around how the product actually operates.",
+    title: "Data that fits the product",
+    text: "PostgreSQL and MongoDB models designed around how the product actually works.",
   },
 ];
 
@@ -61,8 +63,6 @@ const fadeUp: Variants = {
 const Header = () => {
   return (
     <section className="relative overflow-hidden pb-20 pt-28 sm:pt-32">
-      <Navbar />
-
       <div className="section-shell">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           <Motion.div
@@ -88,17 +88,14 @@ const Header = () => {
             </Motion.p>
 
             <Motion.h1 variants={fadeUp} custom={2} className="section-title">
-              I turn ideas into{" "}
+              I build{" "}
               <span className="display-font text-slate-900/80 dark:text-white/80">
-                fullstack web products people actually use.
+                full-stack software that ships to real users.
               </span>
             </Motion.h1>
 
             <Motion.p variants={fadeUp} custom={3} className="section-copy mt-6">
-              MERN developer who started in frontend and grew into building
-              complete applications. I connect polished React interfaces with
-              secure Node/Express APIs and MongoDB — focused on clean UX,
-              dependable backends, and shipping real products.
+              Software engineering student and full-stack developer working across Next.js, Express and PostgreSQL. Currently shipping features in two live roles: a full-stack internship at Everline Technologies and a backend role at AASTU Gibigubae.
             </Motion.p>
 
             <Motion.div variants={fadeUp} custom={4} className="mt-8 flex flex-wrap gap-3">
@@ -226,7 +223,7 @@ const Header = () => {
                 Current Stack
               </p>
               <h2 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">
-                Frontend craft backed by real fullstack implementation.
+                Production-ready tools across the full stack.
               </h2>
             </div>
 
