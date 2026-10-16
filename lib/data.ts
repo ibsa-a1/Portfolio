@@ -375,6 +375,38 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
+export interface ContributionItem {
+  title: string;
+  project: string;
+  period: string;
+  summary: string;
+  stack: string[];
+  points: string[];
+  outcome: string;
+  link: { label: string; href: string };
+}
+
+export const contribution: ContributionItem = {
+  title: "Open-source contribution",
+  project: "Beleqet platform",
+  period: "Jul 2026",
+  summary:
+    "Built an immutable audit trail for the Beleqet platform, with database-level append-only protection, GDPR-aware payload sanitization and an admin search dashboard.",
+  stack: ["NestJS", "Prisma", "PostgreSQL", "Next.js", "Jest"],
+  points: [
+    "Closed a TRUNCATE loophole found in review: row-level triggers never fire on TRUNCATE, so I added a statement-level BEFORE TRUNCATE trigger reusing the same guard function and verified it against the database.",
+    "Fixed sanitizer edge cases (arrays of objects skipped redaction, Date objects collapsed to {}) by recursing into arrays and preserving dates, with tests for both.",
+    "Fixed a migration that passed on my long-lived dev database but failed on CI's fresh one, and now run prisma migrate reset locally before pushing.",
+    "Kept the branch current as main moved, resolving conflicts with an RBAC refactor and guard changes and repairing broken imports and test dependencies each time.",
+  ],
+  outcome:
+    "Merged into main after four rounds of security-focused review, with 10/10 CI checks passing and a maintainer approval. Closed issue #24, \"Audit Trail: (Admin & Control)\".",
+  link: {
+    label: "View pull request #147",
+    href: "https://github.com/Beleqet-Main-Ecosystem/beleqet-ecosystem-updated/pull/147",
+  },
+};
+
 // Stats are computed from the project data so they cannot drift out of date.
 const liveFullstackCount = projectsData.filter(
   (project) => project.category === "fullstack" && project.demo,
