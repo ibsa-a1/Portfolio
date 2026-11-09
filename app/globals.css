@@ -89,7 +89,7 @@ textarea {
   }
 
   .surface-panel {
-    @apply rounded-[2rem] border border-white/10 bg-white/6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-300;
+    @apply rounded-[2rem] border border-white/10 bg-white/6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md transition-[background-color,border-color,box-shadow,translate,color] duration-300;
   }
 
   html.light .surface-panel {
@@ -105,7 +105,7 @@ textarea {
   }
 
   .ghost-panel {
-    @apply rounded-[1.5rem] border border-white/10 bg-black/35 transition duration-300;
+    @apply rounded-[1.5rem] border border-white/10 bg-black/35 transition-[background-color,border-color,box-shadow,translate,color] duration-300;
   }
 
   html.light .ghost-panel {
@@ -113,7 +113,7 @@ textarea {
   }
 
   .tag {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-sm text-white/75 transition duration-200;
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-sm text-white/75 transition-[background-color,border-color,color] duration-200;
   }
 
   html.light .tag {

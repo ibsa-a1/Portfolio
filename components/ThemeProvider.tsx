@@ -12,23 +12,14 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
+  // Light is the default. Only an explicit choice (saved on toggle) overrides it.
   const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "dark";
-
-    const saved = window.localStorage.getItem("theme");
-    if (saved === "light" || saved === "dark") {
-      return saved as Theme;
+    if (typeof window === "undefined") return "light";
+    try {
+      return window.localStorage.getItem("theme") === "dark" ? "dark" : "light";
+    } catch {
+      return "light";
     }
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
-
-  const [isThemeChosen, setIsThemeChosen] = useState(() => {
-    if (typeof window === "undefined") return false;
-    const saved = window.localStorage.getItem("theme");
-    return saved === "light" || saved === "dark";
   });
 
   useEffect(() => {
@@ -38,28 +29,14 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
     window.document.body.classList.remove("dark", "light");
     window.document.body.classList.add(theme);
     root.style.colorScheme = theme;
-
-    if (isThemeChosen) {
-      window.localStorage.setItem("theme", theme);
-    }
-  }, [theme, isThemeChosen]);
-
-  useEffect(() => {
-    if (isThemeChosen) return;
-
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (event: MediaQueryListEvent) => {
-      setTheme(event.matches ? "dark" : "light");
-    };
-
-    media.addEventListener?.("change", handleChange);
-
-    return () => media.removeEventListener?.("change", handleChange);
-  }, [isThemeChosen]);
+  }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-    setIsThemeChosen(true);
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    try {
+      window.localStorage.setItem("theme", next);
+    } catch {}
   };
 
   return (

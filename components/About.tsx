@@ -18,9 +18,9 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="surface-panel overflow-hidden p-4 sm:p-5"
+            className="surface-panel flex flex-col overflow-hidden p-4 sm:p-5"
           >
-            <div className="relative overflow-hidden rounded-[1.75rem] min-h-[26rem]">
+            <div className="relative min-h-[26rem] flex-1 overflow-hidden rounded-[1.75rem]">
               <Image
                 src={assets.about_image}
                 alt="Ibsa Abera at work"
@@ -34,7 +34,7 @@ const About = () => {
                   Now focused on
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">
-                  Fullstack web products with React, Node, Express, and MongoDB.
+                  Full-stack features with Next.js, TypeScript, Express and PostgreSQL.
                 </h3>
               </div>
             </div>
@@ -50,28 +50,23 @@ const About = () => {
             <div>
               <span className="section-kicker">About Me</span>
               <h2 className="section-title">
-                From frontend beginnings to{" "}
+                From frontend roots to{" "}
                 <span className="display-font text-slate-900/80 dark:text-white/80">
-                  fullstack product building.
+                  production full-stack work.
                 </span>
               </h2>
               <div className="section-copy mt-6 space-y-5">
                 <p>
-                  I began by building portfolio sites, landing pages, and
-                  UI-heavy React projects. That foundation still shapes how I
-                  work — I care about clarity, usability, responsiveness, and the
-                  small details that make an interface feel finished.
+                  I&apos;m a software engineering student at Addis Ababa
+                  Science and Technology University, building production
+                  software with Node.js, Express, React and PostgreSQL.
                 </p>
                 <p>
-                  I now build across the MERN stack, connecting React clients
-                  with Express APIs, MongoDB-backed features, authentication
-                  flows, dashboards, and admin tools that work cleanly from
-                  database to UI.
+                  I completed a full-stack internship at Everline Technologies, shipping features on a live production SaaS codebase. I&apos;m now on the IT team at AASTU Gibigubae, where I started as a backend developer. I&apos;m comfortable moving between frontend, backend and infrastructure, with hands-on Docker and Linux experience.
                 </p>
                 <p>
-                  I&apos;m strongest in projects where product thinking and code
-                  quality meet: turning a practical need into an interface,
-                  workflow, or service layer that people can actually use.
+                  I&apos;m looking to bring the same speed and ownership to a team
+                  building real products, not just prototypes.
                 </p>
               </div>
             </div>
@@ -95,34 +90,39 @@ const About = () => {
                 </Motion.div>
               ))}
             </div>
-
-            <div className="surface-panel interactive-panel p-6">
-              <h3 className="text-sm font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
-                How I Can Help
-              </h3>
-              <div className="mt-5 grid gap-4">
-                {serviceHighlights.map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-600/80 dark:text-emerald-400/70" />
-                    <p className="text-sm leading-7 text-slate-700/80 dark:text-white/70">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href="/Ibsa_Abera_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="secondary-btn mt-6"
-              >
-                Download Resume
-                <Download className="h-4 w-4" />
-              </a>
-            </div>
           </Motion.div>
         </div>
+        <Motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="surface-panel mx-auto mt-8 max-w-4xl p-6 text-center sm:p-8"
+        >
+          <h3 className="text-sm font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
+            How I Can Help
+          </h3>
+          <div className="mt-6 grid gap-4 text-left sm:grid-cols-2">
+            {serviceHighlights.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-600/80 dark:text-emerald-400/70" />
+                <p className="text-sm leading-7 text-slate-700/80 dark:text-white/70">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/Ibsa_Abera_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="secondary-btn mt-8"
+          >
+            Download Resume
+            <Download className="h-4 w-4" />
+          </a>
+        </Motion.div>
       </div>
     </section>
   );

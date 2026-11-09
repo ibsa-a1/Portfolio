@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks } from "../lib/data";
 import { useTheme } from "./use-theme";
@@ -47,19 +48,19 @@ const Navbar = () => {
                 : "border-slate-200/70 bg-white/75 shadow-[0_18px_50px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-black/45 dark:shadow-none"
             }`}
           >
-            <a href="#top" className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900/80 dark:text-white/80">
+            <Link href="/" className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-900/80 dark:text-white/80">
               Ibsa Abera
-            </a>
+            </Link>
 
             <nav className="hidden items-center gap-8 md:flex">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="text-sm text-slate-700/80 hover:text-slate-950 dark:text-white/65 dark:hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -73,10 +74,10 @@ const Navbar = () => {
                 <Sun className="hidden h-4 w-4 dark:block" />
                 <Moon className="h-4 w-4 dark:hidden" />
               </button>
-              <a href="#contact" className="secondary-btn px-4 py-2">
+              <Link href="/#contact" className="secondary-btn px-4 py-2">
                 Let&apos;s talk
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
 
             <div className="flex items-center gap-4 md:hidden">
@@ -143,25 +144,25 @@ const Navbar = () => {
 
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setShowMobileMenu(false)}
                 className="rounded-2xl border border-slate-200/80 bg-slate-100/70 px-5 py-4 text-lg text-slate-800/80 hover:bg-slate-200/70 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-white/80 dark:hover:bg-white/8 dark:hover:text-white"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             onClick={() => setShowMobileMenu(false)}
             className="primary-btn mt-8 w-full"
           >
             Start a project
             <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </>

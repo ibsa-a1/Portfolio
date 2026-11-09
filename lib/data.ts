@@ -74,47 +74,41 @@ export const assets = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
-
-export const heroStats: HeroStat[] = [
-  { value: "11+", label: "Projects built & shipped" },
-  { value: "MERN", label: "Primary stack" },
-  { value: "3", label: "Live fullstack products" },
-  { value: "4", label: "Backend APIs designed" },
+  { label: "Home", href: "/#top" },
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const expertiseAreas: ExpertiseArea[] = [
   {
     title: "Frontend Engineering",
     description:
-      "Responsive React interfaces with clean component architecture, smooth motion, and polished UX using Tailwind CSS.",
+      "Responsive React and Next.js interfaces written in TypeScript, styled with Tailwind CSS and built from clean, reusable components.",
   },
   {
     title: "Backend Services",
     description:
-      "RESTful APIs with Node.js and Express, featuring secure authentication, role-based access, input validation, and maintainable architecture.",
+      "REST APIs with Node.js and Express in TypeScript, including authentication, middleware, role-based access and maintainable architecture.",
   },
   {
     title: "Database Design",
     description:
-      "MongoDB schema design with relational thinking, optimized data flow, and backend logic built around real product requirements.",
+      "PostgreSQL schemas and data models in professional work, and MongoDB in personal and hackathon projects.",
   },
   {
     title: "Fullstack Delivery",
     description:
-      "End-to-end MERN products connecting React clients to Express APIs, with state management, dashboards, and production deployment.",
+      "Features shipped end to end, from schema and API to UI, reviewed through Git pull requests and deployed with Vercel and Render.",
   },
 ];
 
 export const serviceHighlights: string[] = [
-  "Build and deploy complete MERN applications — from database schema to polished UI",
-  "Design secure REST APIs with JWT auth, role-based access, and real-time updates",
-  "Turn rough ideas into clean, production-ready interfaces people actually enjoy using",
-  "Collaborate closely, communicate clearly, and ship iteratively based on real feedback",
+  "Build full-stack features end to end with Next.js, TypeScript, Express and PostgreSQL",
+  "Design REST APIs and database schemas with authentication and clean, maintainable architecture",
+  "Debug, refactor and ship through Git branches, pull requests and code review",
+  "Work independently, communicate clearly and deliver ahead of release milestones",
 ];
 
 export const projectCategories: ProjectCategory[] = [
@@ -123,21 +117,21 @@ export const projectCategories: ProjectCategory[] = [
     label: "Frontend",
     eyebrow: "UI Engineering",
     description:
-      "React interfaces built for real use — responsive, interactive, and designed to feel finished.",
+      "React interfaces built for real use: responsive, interactive and designed to feel finished.",
   },
   {
     id: "backend",
     label: "Backend",
     eyebrow: "API & Server Builds",
     description:
-      "Node.js + Express APIs powering authentication, real-time events, QR systems, and complete order lifecycles.",
+      "Node.js and Express APIs covering authentication, real-time events, QR systems and complete order lifecycles.",
   },
   {
     id: "fullstack",
     label: "Fullstack",
-    eyebrow: "Complete MERN Products",
+    eyebrow: "End-to-End Products",
     description:
-      "End-to-end applications used by real people — from hackathon builds to Telegram-powered storefronts.",
+      "End-to-end applications used by real people, from a hackathon-placing fuel platform to a Telegram-synced storefront.",
   },
 ];
 
@@ -277,13 +271,13 @@ export const projectsData: Project[] = [
     title: "FuelPass Backend",
     summary: "AI-powered QR fuel distribution API — GDG Hackathon.",
     description:
-      "Server-side engine for FuelPass, a hackathon fuel distribution system. Manages vehicle QR codes, AI-assisted quota tracking, real-time Socket.IO updates for station dashboards, and full CRUD for registrations and transactions.",
+      "Server-side engine for FuelPass, a hackathon fuel distribution system. Manages vehicle QR codes, Gemini-based fuel allocation, real-time Socket.IO updates for station dashboards, and full CRUD for registrations and transactions.",
     image: fuelPass_img,
-    stack: ["Node.js", "Express", "MongoDB", "Socket.IO", "AI"],
+    stack: ["Node.js", "Express", "MongoDB", "Socket.IO", "Google Gemini"],
     highlights: [
       "Dynamic QR generation tied to vehicle and quota records",
       "Real-time socket events for live station updates",
-      "AI-assisted fraud detection and quota distribution logic",
+      "AI-based fuel allocation logic using Google Gemini",
     ],
     code: "https://github.com/G1-Hackathon-GDG/backend.git",
     demo: null,
@@ -293,34 +287,34 @@ export const projectsData: Project[] = [
     id: 9,
     category: "fullstack",
     title: "FuelPass",
-    summary: "AI-powered QR fuel distribution platform",
+    summary: "Digitizing Ethiopia's fuel rationing with QR vouchers and AI",
     description:
-      "A fullstack MERN system built at a GDG hackathon to modernize fuel distribution. Citizens register vehicles and receive QR codes for real-time allocation at fuel stations. AI logic prevents quota abuse and surfaces anomalies on a live dashboard.",
+      "A MERN-stack application, built at a GDG hackathon, that digitizes Ethiopia's fuel rationing system. Citizens receive QR-code vouchers that fuel stations redeem, with AI-based allocation logic and real-time updates.",
     image: fuelPass_img,
-    stack: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "AI"],
+    stack: ["React", "Node.js", "Express", "MongoDB", "Socket.IO", "Google Gemini"],
     highlights: [
-      "QR-based vehicle identity and fuel quota enforcement",
-      "Live station dashboard with Socket.IO real-time updates",
-      "AI-assisted fraud detection built under hackathon time pressure",
+      "QR-code voucher generation and redemption",
+      "AI-based fuel allocation logic using Google Gemini",
+      "Real-time updates powered by Socket.io",
     ],
     code: "https://github.com/G1-Hackathon-GDG",
     demo: "https://fuelpass-delta.vercel.app/",
-    status: "Live · Hackathon project",
+    status: "Live · 4th of 20+ teams",
     featured: true,
   },
   {
     id: 10,
     category: "fullstack",
     title: "Dynamic QR Attendance System",
-    summary: "Secure attendance platform with device-bound QR codes",
+    summary: "Dynamic QR codes replace manual attendance check-in",
     description:
-      "A secure fullstack application where teachers generate session-based QR codes and students mark attendance by scanning. Device binding ties every scan to a verified physical device — eliminating proxy attendance without extra hardware.",
+      "A full-stack system that replaces manual check-in with a faster digital flow. Teachers generate session-based QR codes and students scan to mark attendance, with device binding to discourage proxy attendance.",
     image: attendQR_img,
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT", "QR"],
     highlights: [
-      "Time-limited QR codes regenerated per session by teachers",
-      "Device fingerprint binding prevents credential sharing",
-      "Role-separated dashboards for teachers and students",
+      "Dynamic QR code generation for each session",
+      "Authentication, session management and role-based access control",
+      "Backend APIs and database integration for real-time attendance recording and reporting",
     ],
     code: "https://github.com/ibsa-a1/Dynamic-QR-Based-Class-Attendance-System.git",
     demo: "https://dynamic-qr-based-class-attendance-s.vercel.app",
@@ -331,19 +325,99 @@ export const projectsData: Project[] = [
     id: 11,
     category: "fullstack",
     title: "ShopSync",
-    summary: "Telegram-powered e-commerce storefront",
+    summary: "Telegram channel to live storefront, automatically",
     description:
-      "A MERN e-commerce platform using Telegram as its CMS. Shop owners post products to their channel, and a bot automatically syncs them to the live storefront. Purpose-built for small businesses already posting & selling products on Telegram.",
+      "An automated pipeline that syncs products from a Telegram channel, through the Telegram Bot API, to a live web storefront, with images stored on Cloudinary. Built for small businesses that already sell on Telegram.",
     image: shopSync_img,
-    stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API"],
+    stack: ["React", "Node.js", "Express", "MongoDB", "Telegram Bot API", "Cloudinary"],
     highlights: [
-      "Telegram channel acts as the product management backend",
-      "Bot auto-syncs new posts to the live store in real time",
-      "Full cart, order, and storefront UX — no separate admin panel",
+      "Automated Telegram-to-storefront product sync",
+      "Fuzzy duplicate-product detection keeps the catalog accurate",
+      "7 custom React hooks power cart, auth, categories, products and sync logs",
     ],
     code: "https://github.com/ibsa-a1/ShopSync.git",
     demo: "https://shop-sync-sand.vercel.app/",
-    status: "Live Project",
+    status: "Live project",
     featured: true,
   },
+];
+
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  period: string;
+  stack: string[];
+  points: string[];
+  /** Optional proof link; the button only shows when this is set. */
+  certificate?: { label: string; href: string };
+}
+
+export const experience: ExperienceItem[] = [
+  {
+    role: "Backend Developer & IT Team",
+    company: "AASTU Gibigubae",
+    period: "Current",
+    stack: ["TypeScript", "Express", "PostgreSQL"],
+    points: [
+      "Designed and built backend services to support core platform features, with a focus on clean, maintainable architecture.",
+      "Implemented REST API endpoints and database schemas, working independently to debug, test and refine backend functionality ahead of release milestones.",
+      "Continuing on the Gibigubae IT team, working on technical and IT projects such as SSO authentication and authorization.",
+    ],
+    // certificate: { label: "View certificate", href: "https://..." },
+  },
+  {
+    role: "Full-Stack Developer Intern",
+    company: "Everline Technologies",
+    period: "Completed",
+    stack: ["Next.js", "TypeScript", "Express", "PostgreSQL"],
+    points: [
+      "Built and shipped full-stack features end to end across a live production SaaS codebase.",
+      "Implemented REST API endpoints and PostgreSQL-backed data models, and debugged and refactored existing code through Git-based pull request review.",
+      "Collaborated with the engineering team to ship features on a real product used by real users.",
+    ],
+    // certificate: { label: "View certificate", href: "https://..." },
+  },
+];
+
+export interface ContributionItem {
+  title: string;
+  project: string;
+  period: string;
+  summary: string;
+  stack: string[];
+  points: string[];
+  outcome: string;
+  link: { label: string; href: string };
+}
+
+export const contribution: ContributionItem = {
+  title: "Open-source contribution",
+  project: "Beleqet platform",
+  period: "Jul 2026",
+  summary:
+    "Built an immutable audit trail for the Beleqet platform, with database-level append-only protection, GDPR-aware payload sanitization and an admin search dashboard.",
+  stack: ["NestJS", "Prisma", "PostgreSQL", "Next.js", "Jest"],
+  points: [
+    "Closed a TRUNCATE loophole found in review: row-level triggers never fire on TRUNCATE, so I added a statement-level BEFORE TRUNCATE trigger reusing the same guard function and verified it against the database.",
+    "Fixed sanitizer edge cases (arrays of objects skipped redaction, Date objects collapsed to {}) by recursing into arrays and preserving dates, with tests for both.",
+    "Fixed a migration that passed on my long-lived dev database but failed on CI's fresh one, and now run prisma migrate reset locally before pushing.",
+    "Kept the branch current as main moved, resolving conflicts with an RBAC refactor and guard changes and repairing broken imports and test dependencies each time.",
+  ],
+  outcome:
+    "Merged into main after four rounds of security-focused review, with 10/10 CI checks passing and a maintainer approval. Closed issue #24, \"Audit Trail: (Admin & Control)\".",
+  link: {
+    label: "View pull request #147",
+    href: "https://github.com/Beleqet-Main-Ecosystem/beleqet-ecosystem-updated/pull/147",
+  },
+};
+
+// Stats are computed from the project data so they cannot drift out of date.
+const liveFullstackCount = projectsData.filter(
+  (project) => project.category === "fullstack" && project.demo,
+).length;
+
+export const heroStats: HeroStat[] = [
+  { value: "2", label: "Engineering roles" },
+  { value: `${liveFullstackCount}+`, label: "Live full-stack projects" },
+  { value: `${projectsData.length}+`, label: "Projects built & shipped" },
 ];

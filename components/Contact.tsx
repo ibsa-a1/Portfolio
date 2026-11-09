@@ -106,9 +106,7 @@ const Contact = () => {
                 </span>
               </h2>
               <p className="section-copy mt-6">
-                I&apos;m open to freelance work, internships, and collaborations
-                where thoughtful UI, dependable backend work, and clear
-                communication matter.
+                I&apos;m open to internships, junior roles and collaborations on real products. Send a message and I&apos;ll get back to you.
               </p>
             </div>
 
