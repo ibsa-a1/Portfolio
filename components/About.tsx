@@ -18,9 +18,9 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="surface-panel overflow-hidden p-4 sm:p-5"
+            className="surface-panel flex flex-col overflow-hidden p-4 sm:p-5"
           >
-            <div className="relative overflow-hidden rounded-[1.75rem] min-h-[26rem]">
+            <div className="relative min-h-[26rem] flex-1 overflow-hidden rounded-[1.75rem]">
               <Image
                 src={assets.about_image}
                 alt="Ibsa Abera at work"
@@ -90,34 +90,39 @@ const About = () => {
                 </Motion.div>
               ))}
             </div>
-
-            <div className="surface-panel interactive-panel p-6">
-              <h3 className="text-sm font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
-                How I Can Help
-              </h3>
-              <div className="mt-5 grid gap-4">
-                {serviceHighlights.map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-600/80 dark:text-emerald-400/70" />
-                    <p className="text-sm leading-7 text-slate-700/80 dark:text-white/70">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href="/Ibsa_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="secondary-btn mt-6"
-              >
-                Download Resume
-                <Download className="h-4 w-4" />
-              </a>
-            </div>
           </Motion.div>
         </div>
+        <Motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="surface-panel mx-auto mt-8 max-w-4xl p-6 text-center sm:p-8"
+        >
+          <h3 className="text-sm font-medium uppercase tracking-[0.3em] text-indigo-500/80 dark:text-indigo-400/60">
+            How I Can Help
+          </h3>
+          <div className="mt-6 grid gap-4 text-left sm:grid-cols-2">
+            {serviceHighlights.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-600/80 dark:text-emerald-400/70" />
+                <p className="text-sm leading-7 text-slate-700/80 dark:text-white/70">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/Ibsa_Abera_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="secondary-btn mt-8"
+          >
+            Download Resume
+            <Download className="h-4 w-4" />
+          </a>
+        </Motion.div>
       </div>
     </section>
   );
