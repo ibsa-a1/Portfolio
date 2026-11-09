@@ -22,7 +22,7 @@ export default function Experience() {
           <h2 className="section-title">
             Shipping on{" "}
             <span className="display-font text-slate-900/80 dark:text-white/80">
-              real products today.
+              real products.
             </span>
           </h2>
         </Motion.div>
@@ -63,12 +63,23 @@ export default function Experience() {
                 ))}
               </ul>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap items-center gap-2">
                 {item.stack.map((tech) => (
                   <span key={tech} className="tag text-xs">
                     {tech}
                   </span>
                 ))}
+                {item.certificate && (
+                  <a
+                    href={item.certificate.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="secondary-btn ml-auto px-4 py-2"
+                  >
+                    {item.certificate.label}
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             </Motion.article>
           ))}

@@ -62,11 +62,7 @@ const About = () => {
                   software with Node.js, Express, React and PostgreSQL.
                 </p>
                 <p>
-                  Right now I work across two live roles: a full-stack
-                  internship at Everline Technologies and a backend role for
-                  AASTU Gibigubae. I&apos;m comfortable moving between frontend,
-                  backend and infrastructure, with hands-on Docker and Linux
-                  experience.
+                  I completed a full-stack internship at Everline Technologies, shipping features on a live production SaaS codebase. I&apos;m now on the IT team at AASTU Gibigubae, where I started as a backend developer. I&apos;m comfortable moving between frontend, backend and infrastructure, with hands-on Docker and Linux experience.
                 </p>
                 <p>
                   I&apos;m looking to bring the same speed and ownership to a team

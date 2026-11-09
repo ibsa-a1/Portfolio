@@ -95,7 +95,7 @@ const Header = () => {
             </Motion.h1>
 
             <Motion.p variants={fadeUp} custom={3} className="section-copy mt-6">
-              Software engineering student and full-stack developer working across Next.js, Express and PostgreSQL. Currently shipping features in two live roles: a full-stack internship at Everline Technologies and a backend role at AASTU Gibigubae.
+              Software engineering student and full-stack developer working across Next.js, Express and PostgreSQL. Completed a full-stack internship at Everline Technologies and now on the IT team at AASTU Gibigubae, where I started as a backend developer.
             </Motion.p>
 
             <Motion.div variants={fadeUp} custom={4} className="mt-8 flex flex-wrap gap-3">

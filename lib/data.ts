@@ -348,30 +348,34 @@ export interface ExperienceItem {
   period: string;
   stack: string[];
   points: string[];
+  /** Optional proof link; the button only shows when this is set. */
+  certificate?: { label: string; href: string };
 }
 
 export const experience: ExperienceItem[] = [
   {
+    role: "Backend Developer & IT Team",
+    company: "AASTU Gibigubae",
+    period: "Current",
+    stack: ["TypeScript", "Express", "PostgreSQL"],
+    points: [
+      "Designed and built backend services to support core platform features, with a focus on clean, maintainable architecture.",
+      "Implemented REST API endpoints and database schemas, working independently to debug, test and refine backend functionality ahead of release milestones.",
+      "Continuing on the Gibigubae IT team, working on technical and IT projects such as SSO authentication and authorization.",
+    ],
+    // certificate: { label: "View certificate", href: "https://..." },
+  },
+  {
     role: "Full-Stack Developer Intern",
     company: "Everline Technologies",
-    period: "Current",
+    period: "Completed",
     stack: ["Next.js", "TypeScript", "Express", "PostgreSQL"],
     points: [
       "Built and shipped full-stack features end to end across a live production SaaS codebase.",
       "Implemented REST API endpoints and PostgreSQL-backed data models, and debugged and refactored existing code through Git-based pull request review.",
       "Collaborated with the engineering team to ship features on a real product used by real users.",
     ],
-  },
-  {
-    role: "Backend Developer",
-    company: "AASTU Gibigubae",
-    period: "Current",
-    stack: ["TypeScript", "Express", "PostgreSQL"],
-    points: [
-      "Designed and built backend services to support core platform features, with a focus on clean, maintainable architecture.",
-      "Implemented REST API endpoints and database schemas.",
-      "Worked independently to debug, test and refine backend functionality ahead of release milestones.",
-    ],
+    // certificate: { label: "View certificate", href: "https://..." },
   },
 ];
 
@@ -413,7 +417,7 @@ const liveFullstackCount = projectsData.filter(
 ).length;
 
 export const heroStats: HeroStat[] = [
-  { value: "2", label: "Current engineering roles" },
+  { value: "2", label: "Engineering roles" },
   { value: `${liveFullstackCount}+`, label: "Live full-stack projects" },
   { value: `${projectsData.length}+`, label: "Projects built & shipped" },
 ];
